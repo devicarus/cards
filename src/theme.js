@@ -82,6 +82,19 @@ const theme = {
 
             }
         }
+    },
+    forms: {
+        input: {
+            fontFamily: 'body',
+            
+            borderRadius: "0px",
+            borderTopStyle: "none",
+            borderLeftStyle: "none",
+            borderRightStyle: "none",
+
+            borderBottomColor: colors.primary,
+            borderBottomWidth: "2px"
+        }
     }
 }
 
