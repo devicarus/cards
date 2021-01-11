@@ -62,8 +62,8 @@ const theme = {
 
                 paddingTop: "12px",
                 paddingBottom: "12px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
+                paddingLeft: "24px",
+                paddingRight: "24px",
 
                 cursor: "pointer",
 
