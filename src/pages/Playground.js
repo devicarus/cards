@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import { Box } from 'theme-ui'
 
 import WordChoice from '../components/WordChoice'
+import WordInput from '../components/WordInput'
 import WordShow from '../components/WordShow'
 
 function Playground({ match }) {
@@ -18,6 +19,7 @@ function Playground({ match }) {
         >
             <Switch>
                 <Route path={match.path + "/choice"} component={WordChoice} />
+                <Route path={match.path + "/input"} component={WordInput} />
                 <Route path={match.path + "/show"} component={WordShow} />
             </Switch>
         </Box>
