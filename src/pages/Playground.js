@@ -1,7 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import { Box } from 'theme-ui'
+import { Box, Button } from 'theme-ui'
+import { X } from 'react-feather'
 
 import WordChoice from '../components/WordChoice'
 import WordInput from '../components/WordInput'
@@ -17,6 +18,16 @@ function Playground({ match }) {
                 alignItems: ["stretch", "center"]
             }}
         >
+            <Button 
+                variant="icon"
+                sx={{
+                    position: "absolute",
+                    top: 20,
+                    right: 20
+                }}
+            >
+                <X size={48} />
+            </Button>
             <Switch>
                 <Route path={match.path + "/choice"} component={WordChoice} />
                 <Route path={match.path + "/input"} component={WordInput} />
