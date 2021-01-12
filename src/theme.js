@@ -47,6 +47,13 @@ const theme = {
             borderRadius: '10px',
             textTransform: 'uppercase'
         },
+        icon: {
+            background: 'transparent',
+            color: 'text',
+            padding: 0,
+
+            cursor: "pointer"
+        },
         outline: {
             default: {
                 fontFamily: 'body',
@@ -86,7 +93,7 @@ const theme = {
     forms: {
         input: {
             fontFamily: 'body',
-            
+
             borderRadius: "0px",
             borderTopStyle: "none",
             borderLeftStyle: "none",
