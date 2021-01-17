@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Button, Text } from 'theme-ui'
+import { Box, Text } from 'theme-ui'
 
 function WordChoice() {
     return (
