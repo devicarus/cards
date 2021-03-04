@@ -1,6 +1,6 @@
 const colors = {
     text: '#585858',
-    background: '#fff',
+    background: '#f7f7f7',
     primary: '#3ccfff',
     primaryDark: "#58bde9",
     primaryLight: "#99dcf1",
@@ -89,6 +89,21 @@ const theme = {
 
             }
         }
+    },
+    links: {
+        nav: {
+            color: "white",
+            "&:hover": {
+                color: "white",
+                filter: "brightness(95%)"
+            },
+            "&:visited": {
+                color: "white"
+            }
+        }
+    },
+    sizes: {
+        container: "1082px"
     },
     forms: {
         input: {
