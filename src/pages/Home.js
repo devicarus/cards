@@ -1,30 +1,22 @@
 import React from 'react'
 
-import { Link } from 'react-router-dom'
+import { Flex, Container, Box } from 'theme-ui'
 
-import { Flex, NavLink, Container, Box } from 'theme-ui'
+import NavLink from '../components/NavLink'
 
 function Home() {
     return (<>
         <Flex as='nav'
             sx={{
                 height: "60px",
-                alignItems: "center",
                 backgroundColor: "primary",
                 boxShadow: "inset 0 0 4px rgb(31, 205, 251), 0 0 2px rgba(0,0,0,0.30)",
                 textTransform: "uppercase"
             }}
         >
-            <Container>
-                <NavLink href='#!' p={2}>
-                    Home
-                </NavLink>
-                <NavLink to='/playground/show' as={Link} p={2}>
-                    Playground
-                </NavLink>
-                <NavLink href='#!' p={2}>
-                    About
-                </NavLink>
+            <Container sx={{ display: "flex", alignItems: "center" }}>
+                <NavLink icon="Home" label="Home" />
+                <NavLink to='/playground/show' label="Playground" />
             </Container>
         </Flex>
         <Container>
