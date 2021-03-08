@@ -133,8 +133,11 @@ const theme = {
             borderRightStyle: "none",
 
             borderBottomColor: colors.primary,
-            borderBottomWidth: "2px"
-        }
+            borderBottomWidth: "2px",
+
+            "&:focus": {
+                outline: "none"
+            }
     }
 }
 
