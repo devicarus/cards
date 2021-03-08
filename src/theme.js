@@ -5,7 +5,7 @@ const colors = {
     primaryDark: "#58bde9",
     primaryLight: "#99dcf1",
     secondary: '#30c',
-    muted: '#f6f6f6'
+    muted: '#a9a9a9'
 }
 
 const theme = {
