@@ -3,8 +3,6 @@ import React from 'react'
 import { Flex, Box, Button, Badge } from 'theme-ui'
 import Field from '../components/Field'
 
-import { Mail, Lock } from 'react-feather'
-
 function Login() {
     return (
         <Flex
@@ -31,8 +29,8 @@ function Login() {
                         <Badge bg="muted" mt="-5px">Closed</Badge>
                     </Flex>
                 </Flex>
-                <Field icon={Mail} placeholder="Email" style={{ marginBottom: "5px" }} />
-                <Field icon={Lock} placeholder="Password" />
+                <Field icon="Mail" placeholder="Email" style={{ marginBottom: "5px" }} />
+                <Field icon="Lock" placeholder="Password" />
                 <Button sx={{ width: "100%" }} mt="30px">Sign In</Button>
             </Box>
         </Flex>
