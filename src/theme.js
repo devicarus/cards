@@ -138,6 +138,14 @@ const theme = {
             "&:focus": {
                 outline: "none"
             }
+        },
+        plain: {
+            border: "none",
+
+            "&:focus": {
+                outline: "none"
+            }
+        }
     }
 }
 
