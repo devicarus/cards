@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Flex, Container, Box } from 'theme-ui'
 
-import NavLink from '../components/NavLink'
+import NavLink from '../components/wrappers/NavLink'
 
 function Home() {
     return (<>

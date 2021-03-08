@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Flex, Box, Button, Badge } from 'theme-ui'
-import Field from '../components/Field'
+import Field from '../components/wrappers/Field'
 
 function Login() {
     return (
