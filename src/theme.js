@@ -45,7 +45,9 @@ const theme = {
             fontFamily: 'body',
             fontWeight: 'bold',
             borderRadius: '10px',
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+
+            cursor: "pointer"
         },
         icon: {
             background: 'transparent',
