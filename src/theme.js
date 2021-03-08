@@ -49,6 +49,22 @@ const theme = {
 
             cursor: "pointer"
         },
+        plain: {
+            background: "none",
+            color: colors.text,
+            fontFamily: 'body',
+            fontWeight: 'bold',
+            fontSize: 4,
+
+            cursor: "pointer"
+        },
+        plainDisabled: {
+            background: "none",
+            color: colors.muted,
+            fontFamily: 'body',
+            fontWeight: 'bold',
+            fontSize: 4
+        },
         icon: {
             background: 'transparent',
             color: 'text',
