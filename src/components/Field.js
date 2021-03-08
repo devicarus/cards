@@ -9,7 +9,8 @@ function Field(props) {
                 alignItems: "center",
                 borderBottomColor: "primary",
                 borderBottomWidth: "2px",
-                borderBottomStyle: "solid"
+                borderBottomStyle: "solid",
+                ...props.style
             }}
             pl={2}
         >
