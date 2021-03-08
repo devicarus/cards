@@ -1,8 +1,11 @@
 import React from 'react'
 
 import { Flex, Input } from 'theme-ui'
+import * as Icons from 'react-feather'
 
 function Field(props) {
+    const Icon = Icons[props.icon]
+
     return (
         <Flex
             sx={{
@@ -14,7 +17,7 @@ function Field(props) {
             }}
             pl={2}
         >
-            <props.icon size={20} color="gray" />
+            <Icon size={20} color="gray" />
             <Input placeholder={props.placeholder} variant="plain"/>
         </Flex>
     )
