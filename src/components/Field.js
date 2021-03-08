@@ -11,6 +11,7 @@ function Field(props) {
                 borderBottomWidth: "2px",
                 borderBottomStyle: "solid"
             }}
+            pl={2}
         >
             <props.icon size={20} color="gray" />
             <Input placeholder={props.placeholder} variant="plain"/>
