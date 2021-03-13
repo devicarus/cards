@@ -10,14 +10,14 @@ const colors = {
 
 const theme = {
     fonts: {
-        body: 'DINRoundPro',
-        heading: 'DINRoundPro',
-        monospace: 'DINRoundPro'
+        regular: 'DINRoundPro',
+        medium: 'DINRoundPro-Medi'
     },
     fontWeights: {
-        body: 500,
-        heading: 700,
-        bold: 700
+        light: 300,
+        regular: 500,
+        bold: 700,
+        black: 900
     },
     fontSizes: [
         12,
@@ -36,45 +36,49 @@ const theme = {
     colors,
     styles: {
         root: {
-            fontFamily: 'body',
-            fontWeight: 'body'
+            fontFamily: 'regular',
+            fontWeight: 'regular'
         }
     },
     buttons: {
         primary: {
-            fontFamily: 'body',
+            fontFamily: 'regular',
             fontWeight: 'bold',
+
             borderRadius: '10px',
             textTransform: 'uppercase',
 
             cursor: "pointer"
         },
         plain: {
-            background: "none",
-            color: colors.text,
-            fontFamily: 'body',
+            fontFamily: 'regular',
             fontWeight: 'bold',
             fontSize: 4,
+
+            background: "none",
+            color: colors.text,
 
             cursor: "pointer"
         },
         plainDisabled: {
-            background: "none",
-            color: colors.muted,
-            fontFamily: 'body',
+            fontFamily: 'regular',
             fontWeight: 'bold',
-            fontSize: 4
+            fontSize: 4,
+
+            background: "none",
+            color: colors.muted
         },
         icon: {
             background: 'transparent',
             color: 'text',
+
             padding: 0,
 
             cursor: "pointer"
         },
         outline: {
             default: {
-                fontFamily: 'body',
+                fontFamily: 'regular',
                 fontWeight: 'bold',
 
                 background: 'transparent',
@@ -125,7 +129,7 @@ const theme = {
     },
     forms: {
         input: {
-            fontFamily: 'body',
+            fontFamily: 'regular',
 
             borderRadius: "0px",
             borderTopStyle: "none",
