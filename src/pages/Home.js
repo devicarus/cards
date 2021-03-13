@@ -83,7 +83,7 @@ function Home() {
                     )}
                     <Box sx={{ width: "144px", cursor: "pointer" }}>
                         <Flex sx={{
-                            boxShadow: "0 2px 6px rgba(0,0,0,.1)",//"0 6px 0 -1px #fff,0 7px 6px rgba(0,0,0,.1),0 11px 0 -1px #fff,0 12px 6px rgba(0,0,0,.1)",
+                            boxShadow: "0 2px 6px rgba(0,0,0,.1)",
                             borderRadius: "18px",
                             overflow: "hidden",
                             height: "166px",
