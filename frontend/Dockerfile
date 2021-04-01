@@ -2,12 +2,11 @@ FROM node:lts AS development
 
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app
-COPY yarn.lock /usr/src/app
+COPY package.json yarn.lock ./
 
 RUN yarn install --frozen-lockfile
 
-COPY . /usr/src/app
+COPY . .
 
 EXPOSE 3000
 

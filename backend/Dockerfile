@@ -2,11 +2,11 @@ FROM node:lts-buster-slim
 
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/package.json
-COPY yarn.lock /usr/src/app/yarn.lock
+COPY package.json yarn.lock ./
+
 RUN yarn install --frozen-lockfile
 
-COPY . /usr/src/app
+COPY . .
 
 EXPOSE 3000
 
