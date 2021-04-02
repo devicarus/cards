@@ -12,7 +12,7 @@ services:
     volumes:
       - ./frontend:/usr/src/app
     networks:
-      - frontend-express
+      - frontend-backend
     depends_on:
       - backend
 
@@ -27,7 +27,7 @@ services:
       - mongo
     networks:
       - backend-mongo
-      - frontend-express
+      - frontend-backend
 
   mongo:
     container_name: mongo
@@ -38,5 +38,5 @@ services:
     networks:
       - backend-mongo
 networks:
-  frontend-express:
+  frontend-backend:
   backend-mongo:
