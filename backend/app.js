@@ -12,8 +12,7 @@ const bcrypt = require('bcrypt')
 
 const User = require('./models/User')
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/user');
+const router = require('./router')
 
 const app = express();
 
@@ -54,8 +53,7 @@ passport.use(
     })
 )
 
-app.use('/', indexRouter);
-app.use('/user', usersRouter);
+router(app)
 
 mongoose.connect('mongodb://mongo:27017/cards')
 
