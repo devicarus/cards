@@ -15,7 +15,6 @@ module.exports = (app) => {
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
             secretOrKey: "secret"
         }, (jwt_payload, done) => {
-            console.log(jwt_payload)
             User.findById(jwt_payload._id)
                 .then(user => {
                     if (user) {
