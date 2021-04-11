@@ -48,9 +48,9 @@ function Home() {
             }}
         >
             <Container sx={{ display: "flex", alignItems: "center" }}>
-                <NavLink icon="Home" label="Home" />
+                <NavLink to='/' icon="Home" label="Home" />
                 <NavLink to='/playground/show' label="Playground" />
-                <NavLink style={{ marginLeft: "auto" }} icon="LogOut" label="Log Out" />
+                <NavLink to='/' style={{ marginLeft: "auto" }} icon="LogOut" label="Log Out" />
             </Container>
         </Flex>
         <Container>
