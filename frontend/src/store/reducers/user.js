@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 export const login = createAsyncThunk(
   'user/login',
-  async ({email, password}) => {
+  async ({ email, password }, { rejectWithValue }) => {
     const response = await fetch("/auth/login", {
       method: 'POST',
       body: new URLSearchParams({
@@ -10,7 +10,16 @@ export const login = createAsyncThunk(
         password
       })
     })
-    return await response.json()
+
+    const data = await response.json()
+
+    switch (response.status) {
+      case 200:
+        return data
+
+      default:
+        return rejectWithValue(data)
+    }
   }
 )
 
@@ -22,9 +31,12 @@ const userSlice = createSlice({
   },
   reducers: {},
   extraReducers: {
-    [login.fulfilled]: (state, action ) => {
-      state.token = action.payload.token
-      state.email = action.payload.user.email
+    [login.fulfilled]: (state, { payload }) => {
+      state.token = payload.token
+      state.email = payload.user.email
+    },
+    [login.rejected]: (state, action) => {
+      console.log(action.payload)
     }
   }
 })
