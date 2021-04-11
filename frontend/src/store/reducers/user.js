@@ -29,7 +29,12 @@ const userSlice = createSlice({
     token: undefined,
     email: undefined
   },
-  reducers: {},
+  reducers: {
+    logout: (state, action) => {
+      state.token = undefined
+      state.email = undefined
+    }
+  },
   extraReducers: {
     [login.fulfilled]: (state, { payload }) => {
       state.token = payload.token
@@ -41,4 +46,5 @@ const userSlice = createSlice({
   }
 })
 
+export const { logout } = userSlice.actions
 export default userSlice.reducer
