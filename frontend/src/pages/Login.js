@@ -44,9 +44,14 @@ function Login() {
                         <Badge bg="muted" mt="-5px">Closed</Badge>
                     </Flex>
                 </Flex>
-                <Field icon="Mail" placeholder="Email" onChange={e => setEmail(e.target.value)} containerStyle={{ marginBottom: "5px" }} />
-                <Field icon="Lock" placeholder="Password" onChange={e => setPassword(e.target.value)} />
-                <Button sx={{ width: "100%" }} mt="30px" onClick={() => dispatch(login({ email, password }))}>Sign In</Button>
+                <Box as="form" onSubmit={e => {
+                    e.preventDefault()
+                    dispatch(login({ email, password }))
+                }}>
+                    <Field icon="Mail" placeholder="Email" onChange={e => setEmail(e.target.value)} containerStyle={{ marginBottom: "5px" }} />
+                    <Field icon="Lock" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+                    <Button sx={{ width: "100%" }} mt="30px">Sign In</Button>
+                </Box>
             </Box>
         </Flex>
     </>)
