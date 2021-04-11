@@ -1,7 +1,10 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-import { Flex, Container, Box, Image, Text } from 'theme-ui'
-import { Plus } from 'react-feather'
+import { logout } from '../store/reducers/user'
+
+import { Flex, Container, Box, Image, Text, Button } from 'theme-ui'
+import { Plus, LogOut } from 'react-feather'
 
 import NavLink from '../components/wrappers/NavLink'
 
@@ -38,6 +41,9 @@ const decks = [{
 }]
 
 function Home() {
+    const token = useSelector(state => state.user.token)
+    const dispatch = useDispatch()
+
     return (<>
         <Flex as='nav'
             sx={{
@@ -50,7 +56,7 @@ function Home() {
             <Container sx={{ display: "flex", alignItems: "center" }}>
                 <NavLink to='/' icon="Home" label="Home" />
                 <NavLink to='/playground/show' label="Playground" />
-                <NavLink to='/' style={{ marginLeft: "auto" }} icon="LogOut" label="Log Out" />
+                <Button onClick={() => dispatch(logout())} style={{ marginLeft: "auto", display: "flex" }}><LogOut style={{ marginRight: "5px" }} /> Log Out</Button>
             </Container>
         </Flex>
         <Container>
