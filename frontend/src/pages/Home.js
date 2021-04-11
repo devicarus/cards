@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { logout } from '../store/reducers/user'
 
@@ -41,7 +41,6 @@ const decks = [{
 }]
 
 function Home() {
-    const token = useSelector(state => state.user.token)
     const dispatch = useDispatch()
 
     return (<>
