@@ -49,7 +49,7 @@ function Login() {
                     dispatch(login({ email, password }))
                 }}>
                     <Field icon="Mail" placeholder="Email" onChange={e => setEmail(e.target.value)} containerStyle={{ marginBottom: "5px" }} />
-                    <Field icon="Lock" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+                    <Field icon="Lock" placeholder="Password" onChange={e => setPassword(e.target.value)} type="password" />
                     <Button sx={{ width: "100%" }} mt="30px">Sign In</Button>
                 </Box>
             </Box>
