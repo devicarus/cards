@@ -13,12 +13,12 @@ function Field(props) {
                 borderBottomColor: "primary",
                 borderBottomWidth: "2px",
                 borderBottomStyle: "solid",
-                ...props.style
+                ...props.containerStyle
             }}
             pl={2}
         >
             <Icon size={20} color="gray" />
-            <Input placeholder={props.placeholder} variant="plain"/>
+            <Input {...props} variant="plain"/>
         </Flex>
     )
 }
