@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+
+import { login } from '../store/reducers/user'
 
 import { Flex, Box, Button, Badge } from 'theme-ui'
 import Field from '../components/wrappers/Field'
 
 function Login() {
-    return (
+    const dispatch = useDispatch()
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const token = useSelector(state => state.user.token)
+
+    return (<>
+        { token &&
+            <Redirect to='/' />
+        }
+
         <Flex
             sx={{
                 height: "100%",
@@ -29,12 +44,12 @@ function Login() {
                         <Badge bg="muted" mt="-5px">Closed</Badge>
                     </Flex>
                 </Flex>
-                <Field icon="Mail" placeholder="Email" containerStyle={{ marginBottom: "5px" }} />
-                <Field icon="Lock" placeholder="Password" />
-                <Button sx={{ width: "100%" }} mt="30px">Sign In</Button>
+                <Field icon="Mail" placeholder="Email" onChange={e => setEmail(e.target.value)} containerStyle={{ marginBottom: "5px" }} />
+                <Field icon="Lock" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+                <Button sx={{ width: "100%" }} mt="30px" onClick={() => dispatch(login({ email, password }))}>Sign In</Button>
             </Box>
         </Flex>
-    )
+    </>)
 }
 
 export default Login
