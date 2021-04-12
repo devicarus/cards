@@ -81,7 +81,10 @@ function Home() {
                                 height: "166px",
                                 marginBottom: "20px"
                             }}>
-                                <Image src={deck.image} />
+                                <Image src={deck.image} sx={{
+                                    height: "100%",
+                                    objectFit: "cover"
+                                }}/>
                             </Box>
                             <Text sx={{ fontFamily: "medium" }}>{deck.name}</Text>
                         </Box>
