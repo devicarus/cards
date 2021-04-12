@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, NavLink } from 'react-router-dom'
+import { Switch, Route, useHistory } from 'react-router-dom'
 
 import { Box, Button } from 'theme-ui'
 import { X } from 'react-feather'
@@ -9,6 +9,8 @@ import WordInput from '../components/WordInput'
 import WordShow from '../components/WordShow'
 
 function Playground({ match }) {
+    const history = useHistory()
+
     return (
         <Box
             sx={{
@@ -18,18 +20,17 @@ function Playground({ match }) {
                 alignItems: ["stretch", "center"]
             }}
         >
-            <NavLink to="/">
-                <Button
-                    variant="icon"
-                    sx={{
-                        position: "absolute",
-                        top: 20,
-                        right: 20
-                    }}
-                >
-                    <X size={48} />
-                </Button>
-            </NavLink>
+            <Button
+                variant="icon"
+                sx={{
+                    position: "absolute",
+                    top: 20,
+                    right: 20
+                }}
+                onClick={() => history.push("/")}
+            >
+                <X size={48} />
+            </Button>
             <Switch>
                 <Route path={match.path + "/choice"} component={WordChoice} />
                 <Route path={match.path + "/input"} component={WordInput} />
