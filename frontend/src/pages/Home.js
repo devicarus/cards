@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { logout } from '../store/reducers/user'
 
@@ -9,6 +10,7 @@ import { Plus, LogOut } from 'react-feather'
 import NavbarLink from '../components/wrappers/NavbarLink'
 
 function Home() {
+    const history = useHistory()
     const token = useSelector(state => state.user.token)
     const dispatch = useDispatch()
 
@@ -51,7 +53,7 @@ function Home() {
                     justifyItems: "center"
                 }}>
                     {decks.map(deck =>
-                        <Box sx={{ width: "144px", cursor: "pointer" }}>
+                        <Box sx={{ width: "144px", cursor: "pointer" }} onClick={() => history.push("/playground/" + deck._id)}>
                             <Box sx={{
                                 boxShadow: "0 2px 6px rgba(0,0,0,.1),0 6px 0 -1px #fff,0 7px 6px rgba(0,0,0,.1),0 11px 0 -1px #fff,0 12px 6px rgba(0,0,0,.1)",
                                 borderRadius: "18px",
