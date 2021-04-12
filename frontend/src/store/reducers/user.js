@@ -26,7 +26,7 @@ export const login = createAsyncThunk(
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    token: undefined
+    token: localStorage.getItem('token')
   },
   reducers: {
     logout: (state, action) => {
