@@ -6,7 +6,7 @@ import { logout } from '../store/reducers/user'
 import { Flex, Container, Box, Image, Text, Button } from 'theme-ui'
 import { Plus, LogOut } from 'react-feather'
 
-import NavLink from '../components/wrappers/NavLink'
+import NavbarLink from '../components/wrappers/NavbarLink'
 
 function Home() {
     const token = useSelector(state => state.user.token)
@@ -32,7 +32,7 @@ function Home() {
             }}
         >
             <Container sx={{ display: "flex", alignItems: "center" }}>
-                <NavLink to='/' icon="Home" label="Home" />
+                <NavbarLink to='/' icon="Home" label="Home" />
                 <Button onClick={() => dispatch(logout())} style={{ marginLeft: "auto", display: "flex" }}><LogOut style={{ marginRight: "5px" }} /> Log Out</Button>
             </Container>
         </Flex>
