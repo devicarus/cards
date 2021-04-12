@@ -33,7 +33,6 @@ function Home() {
         >
             <Container sx={{ display: "flex", alignItems: "center" }}>
                 <NavLink to='/' icon="Home" label="Home" />
-                <NavLink to='/playground/show' label="Playground" />
                 <Button onClick={() => dispatch(logout())} style={{ marginLeft: "auto", display: "flex" }}><LogOut style={{ marginRight: "5px" }} /> Log Out</Button>
             </Container>
         </Flex>
