@@ -1,5 +1,5 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { logout } from '../store/reducers/user'
 
@@ -8,40 +8,19 @@ import { Plus, LogOut } from 'react-feather'
 
 import NavLink from '../components/wrappers/NavLink'
 
-const decks = [{
-    "name": "tristique tortor eu",
-    "image": "http://dummyimage.com/144x166.png/ff4444/ffffff"
-}, {
-    "name": "sit amet eros suspendisse",
-    "image": "http://dummyimage.com/144x166.png/cc0000/ffffff"
-}, {
-    "name": "et tempus semper",
-    "image": "http://dummyimage.com/144x166.bmp/cc0000/ffffff"
-}, {
-    "name": "leo odio",
-    "image": "http://dummyimage.com/144x166.jpg/cc0000/ffffff"
-}, {
-    "name": "velit eu est",
-    "image": "http://dummyimage.com/144x166.jpg/cc0000/ffffff"
-}, {
-    "name": "potenti cras in purus",
-    "image": "http://dummyimage.com/144x166.png/cc0000/ffffff"
-}, {
-    "name": "orci pede venenatis non",
-    "image": "http://dummyimage.com/144x166.bmp/5fa2dd/ffffff"
-}, {
-    "name": "sed augue",
-    "image": "http://dummyimage.com/144x166.png/dddddd/000000"
-}, {
-    "name": "cubilia curae",
-    "image": "http://dummyimage.com/144x166.png/5fa2dd/ffffff"
-}, {
-    "name": "nisi venenatis",
-    "image": "http://dummyimage.com/144x166.png/5fa2dd/ffffff"
-}]
-
 function Home() {
+    const token = useSelector(state => state.user.token)
     const dispatch = useDispatch()
+
+    const [decks, setDecks] = useState([])
+
+    useEffect(() => {
+        fetch('/decks', {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        }).then(res => res.json()).then(json => setDecks(json))
+    })    
 
     return (<>
         <Flex as='nav'
