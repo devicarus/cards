@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, NavLink } from 'react-router-dom'
 
 import { Box, Button } from 'theme-ui'
 import { X } from 'react-feather'
@@ -18,16 +18,18 @@ function Playground({ match }) {
                 alignItems: ["stretch", "center"]
             }}
         >
-            <Button 
-                variant="icon"
-                sx={{
-                    position: "absolute",
-                    top: 20,
-                    right: 20
-                }}
-            >
-                <X size={48} />
-            </Button>
+            <NavLink to="/">
+                <Button
+                    variant="icon"
+                    sx={{
+                        position: "absolute",
+                        top: 20,
+                        right: 20
+                    }}
+                >
+                    <X size={48} />
+                </Button>
+            </NavLink>
             <Switch>
                 <Route path={match.path + "/choice"} component={WordChoice} />
                 <Route path={match.path + "/input"} component={WordInput} />
