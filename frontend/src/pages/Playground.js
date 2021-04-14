@@ -1,15 +1,40 @@
-import React from 'react'
-import { Switch, Route, useHistory } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useHistory, useParams } from 'react-router-dom'
 
 import { Box, Button } from 'theme-ui'
 import { X } from 'react-feather'
 
-import WordChoice from '../components/WordChoice'
-import WordInput from '../components/WordInput'
 import WordShow from '../components/WordShow'
 
-function Playground({ match }) {
+function Playground() {
     const history = useHistory()
+    const token = useSelector(state => state.user.token)
+    const { id } = useParams()
+
+    const [cards, setCards] = useState([])
+    const [cursor, setCursor] = useState(0)
+
+    const randomizeCursor = () => {
+        const random = Math.floor(Math.random() * cards.length)
+        setCursor(random)
+    }
+
+    useEffect(() => {
+        fetch('/deck/' + id, {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        })
+        .then(res => res.json())
+        .then(json => { 
+            setCards(json.cards)
+        })
+    }, [])
+
+    useEffect(() => {
+        randomizeCursor() 
+    }, [cards])
 
     return (
         <Box
@@ -31,11 +56,11 @@ function Playground({ match }) {
             >
                 <X size={48} />
             </Button>
-            <Switch>
-                <Route path={match.path + "/choice"} component={WordChoice} />
-                <Route path={match.path + "/input"} component={WordInput} />
-                <Route path={match.path + "/show"} component={WordShow} />
-            </Switch>
+            <WordShow 
+                front={cards[cursor]?.front} 
+                back={cards[cursor]?.back} 
+                nextFunc={() => randomizeCursor()} 
+            />
         </Box>
     )
 }

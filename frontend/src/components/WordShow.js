@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Box, Text } from 'theme-ui'
+import { Box, Text, Button } from 'theme-ui'
 
-function WordChoice() {
+function WordChoice(props) {
+    const initialState = { isFlipped: false, showContinue: false }
+    const [{ isFlipped, showContinue }, setState] = useState(initialState)
+
     return (
         <Box
             sx={{
                 display: "flex",
-                flexDirection: ["column", "row"],
+                flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
+                gap: "20px"
             }}
         >
-            <Box>
+            <Box
+                sx={{
+                    perspective: "1000px"
+                }}
+            >
                 <Box
                     sx={{
                         minWidth: "150px",
@@ -21,20 +29,72 @@ function WordChoice() {
                         minHeight: "150px",
                         boxShadow: "rgba(0, 0, 0, 0.20) 0px 4px 10px",
                         borderRadius: "30px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        cursor: "pointer",
+
+                        transformStyle: "preserve-3d",
+                        transform: (isFlipped ? "rotateY(180deg)" : ""),
+
+                        "&:hover": {
+                            transition: "transform 0.4s"
+                        }
                     }}
+                    onClick={() => setState({ isFlipped: !isFlipped, showContinue: true })}
                 >
-                    <Text
+                    <Box
                         sx={{
-                            fontWeight: "bold",
-                            fontSize: 3
+                            position: "absolute",
+                            backfaceVisibility: "hidden",
+
+                            width: "100%",
+                            height: "100%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
                         }}
-                    >Word</Text>
+                    >
+                        <Text
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: 3
+                            }}
+                        >{props.front}</Text>
+                    </Box>
+
+                    <Box
+                        sx={{
+                            position: "absolute",
+                            backfaceVisibility: "hidden",
+                            transform: "rotateY(180deg)",
+                            borderRadius: "30px",
+
+                            width: "100%",
+                            height: "100%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                        bg="background"
+                    >
+                        <Text
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: 3
+                            }}
+                        >{props.back}</Text>
+                    </Box>
                 </Box>
             </Box>
-        </Box>
+            <Button
+                sx={{
+                    width: "100%",
+                    visibility: showContinue ? "visible" : "hidden"
+                }}
+                onClick={() => {
+                    setState(initialState)
+                    props.nextFunc()
+                }}
+            >Continue</Button>
+        </Box >
     )
 }
 
