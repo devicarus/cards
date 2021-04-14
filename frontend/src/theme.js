@@ -48,6 +48,15 @@ const theme = {
             borderRadius: '10px',
             textTransform: 'uppercase',
 
+            cursor: "pointer",
+
+            transition: "0.1s",
+            "&:hover": {
+                background: colors.primaryDark,
+
+                transition: "0.1s"
+            }
+        },
             cursor: "pointer"
         },
         plain: {
