@@ -69,7 +69,7 @@ function Home() {
                             <Text sx={{ fontFamily: "medium" }}>{deck.name}</Text>
                         </Box>
                     )}
-                    <Box sx={{ width: "144px", cursor: "pointer" }}>
+                    {/*<Box sx={{ width: "144px", cursor: "pointer" }}>
                         <Flex sx={{
                             boxShadow: "0 2px 6px rgba(0,0,0,.1)",
                             borderRadius: "18px",
@@ -81,7 +81,7 @@ function Home() {
                         }}>
                             <Plus color="lightgray" size="30%" />
                         </Flex>
-                    </Box>
+                    </Box>*/}
                 </Box>
             </Box>
         </Container>
