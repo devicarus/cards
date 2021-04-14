@@ -57,6 +57,12 @@ const theme = {
                 transition: "0.1s"
             }
         },
+        navbar: {
+            fontFamily: 'regular',
+            fontWeight: 'bold',
+
+            textTransform: 'uppercase',
+
             cursor: "pointer"
         },
         plain: {
