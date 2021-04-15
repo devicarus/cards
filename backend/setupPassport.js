@@ -13,7 +13,7 @@ module.exports = (app) => {
     passport.use(
         new JwtStrategy({
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-            secretOrKey: "secret"
+            secretOrKey: process.env.JWT_SECRET
         }, (jwt_payload, done) => {
             User.findById(jwt_payload._id)
                 .then(user => {
