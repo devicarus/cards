@@ -12,14 +12,14 @@ function WordChoice(props) {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center",
-                gap: "20px"
+                justifyContent: "center"
             }}
         >
             <Box
                 sx={{
-                    perspective: "1000px"
+                    perspective: "1000px",
                 }}
+                mb={4}
             >
                 <Box
                     sx={{
