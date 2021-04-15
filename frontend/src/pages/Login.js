@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
-import { login } from '../store/reducers/user'
+import { setToken } from '../store/reducers/user'
 
 import { Flex, Box, Button, Badge } from 'theme-ui'
 import Field from '../components/wrappers/Field'
@@ -14,6 +14,28 @@ function Login() {
     const [password, setPassword] = useState('')
 
     const token = useSelector(state => state.user.token)
+
+    const login = async (email, password) => {
+        const response = await fetch("/auth/login", {
+            method: 'POST',
+            body: new URLSearchParams({
+                email,
+                password
+            })
+        })
+
+        const data = await response.json()
+
+        switch (response.status) {
+            case 200:
+                dispatch(setToken(data.token))
+                break;
+
+            default:
+                console.log(data)
+                break;
+        }
+    }
 
     return (<>
         { token &&
@@ -46,7 +68,7 @@ function Login() {
                 </Flex>
                 <Box as="form" onSubmit={e => {
                     e.preventDefault()
-                    dispatch(login({ email, password }))
+                    login(email, password)
                 }}>
                     <Field icon="Mail" placeholder="Email" onChange={e => setEmail(e.target.value)} containerStyle={{ marginBottom: "5px" }} />
                     <Field icon="Lock" placeholder="Password" onChange={e => setPassword(e.target.value)} type="password" />

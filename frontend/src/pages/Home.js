@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
-import { logout } from '../store/reducers/user'
+import { setToken } from '../store/reducers/user'
 
 import { Flex, Container, Box, Image, Text, Button } from 'theme-ui'
 import { Plus, LogOut } from 'react-feather'
@@ -35,7 +35,7 @@ function Home() {
         >
             <Container sx={{ display: "flex", alignItems: "center" }}>
                 {/*<NavbarLink to='/' icon="Home" label="Home" />*/}
-                <Button onClick={() => dispatch(logout())} variant="navbar" style={{ marginLeft: "auto", display: "flex" }}><LogOut style={{ marginRight: "5px" }} /> Log Out</Button>
+                <Button onClick={() => dispatch(setToken(null))} variant="navbar" style={{ marginLeft: "auto", display: "flex" }}><LogOut style={{ marginRight: "5px" }} /> Log Out</Button>
             </Container>
         </Flex>
         <Container>
