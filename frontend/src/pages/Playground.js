@@ -39,7 +39,7 @@ function Playground() {
     return (
         <Box
             sx={{
-                minHeight: "100vh",
+                minHeight: "100%",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: ["stretch", "center"]
