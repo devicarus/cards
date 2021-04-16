@@ -10,18 +10,14 @@ import Field from '../components/wrappers/Field'
 function Login() {
     const dispatch = useDispatch()
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [form, setForm] = useState({ email: "", password: "" })
 
     const token = useSelector(state => state.user.token)
 
-    const login = async (email, password) => {
+    const login = async (form) => {
         const response = await fetch("/auth/login", {
             method: 'POST',
-            body: new URLSearchParams({
-                email,
-                password
-            })
+            body: new URLSearchParams(form)
         })
 
         const data = await response.json()
@@ -68,10 +64,10 @@ function Login() {
                 </Flex>
                 <Box as="form" onSubmit={e => {
                     e.preventDefault()
-                    login(email, password)
+                    login(form)
                 }}>
-                    <Field icon="Mail" placeholder="Email" onChange={e => setEmail(e.target.value)} containerStyle={{ marginBottom: "5px" }} />
-                    <Field icon="Lock" placeholder="Password" onChange={e => setPassword(e.target.value)} type="password" />
+                    <Field icon="Mail" placeholder="Email" onChange={e => setForm({ ...form, email: e.target.value })} containerStyle={{ marginBottom: "5px" }} />
+                    <Field icon="Lock" placeholder="Password" onChange={e => setForm({ ...form, password: e.target.value })} type="password" />
                     <Button sx={{ width: "100%" }} mt="30px">Sign In</Button>
                 </Box>
             </Box>
