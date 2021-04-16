@@ -10,7 +10,7 @@ function Field(props) {
         <Flex
             sx={{
                 alignItems: "center",
-                borderBottomColor: "primary",
+                borderBottomColor: props.invalid ? "danger" : "primary",
                 borderBottomWidth: "2px",
                 borderBottomStyle: "solid",
                 ...props.containerStyle
