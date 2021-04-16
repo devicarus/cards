@@ -4,7 +4,8 @@ const colors = {
     primary: '#3ccfff',
     primaryDark: "#58bde9",
     primaryLight: "#99dcf1",
-    muted: '#a9a9a9'
+    muted: '#a9a9a9',
+    danger: '#FF3C38'
 }
 
 const theme = {
