@@ -4,13 +4,19 @@ import { Redirect } from 'react-router-dom'
 
 import { setToken } from '../store/reducers/user'
 
-import { Flex, Box, Button, Badge } from 'theme-ui'
+import { Flex, Box, Button, Badge, Text } from 'theme-ui'
 import Field from '../components/wrappers/Field'
 
 function Login() {
     const dispatch = useDispatch()
 
-    const [form, setForm] = useState({ email: "", password: "" })
+    const [state, setState] = useState({ 
+        form: { 
+            email: "", 
+            password: "" 
+        },
+        error: "" 
+    })
 
     const token = useSelector(state => state.user.token)
 
@@ -27,8 +33,12 @@ function Login() {
                 dispatch(setToken(data.token))
                 break;
 
+            case 400:
+                setState({ ...state, error: "Wrong email or password"})
+                break;
+
             default:
-                console.log(data)
+                setState({ ...state, error: "Something went wrong, please try again later"})
                 break;
         }
     }
@@ -64,10 +74,13 @@ function Login() {
                 </Flex>
                 <Box as="form" onSubmit={e => {
                     e.preventDefault()
-                    login(form)
+                    login(state.form)
                 }}>
-                    <Field icon="Mail" placeholder="Email" onChange={e => setForm({ ...form, email: e.target.value })} containerStyle={{ marginBottom: "5px" }} />
-                    <Field icon="Lock" placeholder="Password" onChange={e => setForm({ ...form, password: e.target.value })} type="password" />
+                    <Field icon="Mail" placeholder="Email" invalid={state.error} onChange={e => setState({ form: { ...state.form, email: e.target.value }})} containerStyle={{ marginBottom: "5px" }} />
+                    <Field icon="Lock" placeholder="Password" invalid={state.error} onChange={e => setState({ form: { ...state.form, password: e.target.value }})} type="password" />
+                    { state.error &&
+                        <Text mt={2} color="#FF3C38" sx={{ fontWeight: "bold", textAlign: "center" }}>{ state.error }</Text>
+                    }
                     <Button sx={{ width: "100%" }} mt="30px">Sign In</Button>
                 </Box>
             </Box>
