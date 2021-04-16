@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-import { Flex, Input } from 'theme-ui'
+import { Flex, Input, IconButton } from 'theme-ui'
+import { Eye, EyeOff } from 'react-feather'
 import * as Icons from 'react-feather'
 
 function Field(props) {
+    const [type, setType] = useState(props.type)
+
     const Icon = Icons[props.icon]
 
     return (
@@ -18,7 +21,26 @@ function Field(props) {
             pl={2}
         >
             <Icon size={20} color="gray" />
-            <Input {...props} variant="plain"/>
+            <Input {...props} type={type} variant="plain" />
+            { props.type === "password" &&
+                <IconButton
+                    onClick={e => {
+                        e.preventDefault()
+
+                        if (type === "password") {
+                            setType("text")
+                        } else {
+                            setType("password")
+                        }
+                    }}
+                >
+                    { type === "password" ?
+                        <Eye size={20} color="gray" />
+                        :
+                        <EyeOff size={20} color="gray" />
+                    }
+                </IconButton>
+            }
         </Flex>
     )
 }
