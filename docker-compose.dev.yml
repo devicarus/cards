@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+  frontend:
+    container_name: frontend
+    build: 
+      context: frontend
+      target: development
+    restart: always
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./frontend:/usr/src/app
+    networks:
+      - frontend-backend
+    depends_on:
+      - backend
+
+  backend:
+    container_name: backend
+    build: 
+      context: backend
+    restart: always
+    ports:
+      - 4000:3000
+    volumes:
+      - ./backend:/usr/src/app
+    depends_on:
+      - mongo
+    networks:
+      - backend-mongo
+      - frontend-backend
+
+  mongo:
+    container_name: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    image: mongo:4.2.0
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend-mongo
+networks:
+  frontend-backend:
+  backend-mongo:
