@@ -17,7 +17,7 @@ function Home() {
     const [decks, setDecks] = useState([])
 
     useEffect(() => {
-        fetch('/decks', {
+        fetch('/api/decks', {
             headers: {
                 Authorization: 'Bearer ' + token
             }

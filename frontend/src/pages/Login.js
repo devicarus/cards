@@ -21,7 +21,7 @@ function Login() {
     const token = useSelector(state => state.user.token)
 
     const login = async (form) => {
-        const response = await fetch("/auth/login", {
+        const response = await fetch("/api/auth/login", {
             method: 'POST',
             body: new URLSearchParams(form)
         })

@@ -21,7 +21,7 @@ function Playground() {
     }
 
     useEffect(() => {
-        fetch('/deck/' + id, {
+        fetch('/api/deck/' + id, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
