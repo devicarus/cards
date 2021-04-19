@@ -36,9 +36,9 @@ function Field(props) {
                     type="button"
                 >
                     { type === "password" ?
-                        <Eye size={20} color="gray" />
-                        :
                         <EyeOff size={20} color="gray" />
+                        :
+                        <Eye size={20} color="gray" />
                     }
                 </IconButton>
             }
