@@ -81,7 +81,7 @@ function Login() {
                     { state.error &&
                         <Text mt={2} color="#FF3C38" sx={{ fontWeight: "bold", textAlign: "center" }}>{ state.error }</Text>
                     }
-                    <Button sx={{ width: "100%" }} mt="30px">Sign In</Button>
+                    <Button type="submit" sx={{ width: "100%" }} mt="30px">Sign In</Button>
                 </Box>
             </Box>
         </Flex>

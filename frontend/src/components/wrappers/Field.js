@@ -33,6 +33,7 @@ function Field(props) {
                             setType("password")
                         }
                     }}
+                    type="button"
                 >
                     { type === "password" ?
                         <Eye size={20} color="gray" />
