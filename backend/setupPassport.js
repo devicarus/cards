@@ -1,7 +1,7 @@
-const passport = require('passport');
+const passport = require('passport')
 const LocalStrategy = require('passport-local')
-const JwtStrategy = require('passport-jwt').Strategy;
-const ExtractJwt = require('passport-jwt').ExtractJwt;
+const JwtStrategy = require('passport-jwt').Strategy
+const ExtractJwt = require('passport-jwt').ExtractJwt
 
 const bcrypt = require('bcrypt')
 
@@ -17,12 +17,10 @@ module.exports = (app) => {
         }, (jwt_payload, done) => {
             User.findById(jwt_payload._id)
                 .then(user => {
-                    if (user) {
-                        return done(null, user);
-                    }
-                    return done(null, false);
+                    if (user) return done(null, user)
+                    return done(null, false)
                 })
-                .catch(err => console.log(err));
+                .catch(err => done(err))
         })
     );
 
@@ -30,12 +28,13 @@ module.exports = (app) => {
         new LocalStrategy({
             usernameField: 'email'
         }, (email, password, done) => {
-            User.findOne({ email }, function (err, user) {
-                if (err) return done(err);
-                if (!user) return done(null, false);
-                if (!bcrypt.compareSync(password, user.password)) return done(null, false);
-                return done(null, user);
-            });
+            User.findOne({ email })
+                .then(user => {
+                    if (!user) return done(null, false);
+                    if (!bcrypt.compareSync(password, user.password)) return done(null, false)
+                    return done(null, user)
+                })
+                .catch(err => done(err))
         })
     )
 }
