@@ -127,18 +127,6 @@ const theme = {
             }
         }
     },
-    links: {
-        nav: {
-            color: "white",
-            "&:hover": {
-                color: "white",
-                filter: "brightness(95%)"
-            },
-            "&:visited": {
-                color: "white"
-            }
-        }
-    },
     sizes: {
         container: "1082px"
     },
