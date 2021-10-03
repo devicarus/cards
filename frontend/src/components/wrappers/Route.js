@@ -9,7 +9,7 @@ function Route(props) {
     return (
         <>
             { props.protected && !token &&
-                <Redirect to="/login" />
+                <Redirect to="/signin" />
             }
             <RouterRoute {...props} />
         </>
