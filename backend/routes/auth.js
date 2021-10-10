@@ -1,10 +1,12 @@
 const express = require('express')
+const fs = require('fs/promises')
 
 const passport = require('passport')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const User = require('../models/User')
+const Deck = require('../models/Deck')
 
 const router = express.Router()
 
@@ -23,6 +25,14 @@ router.post('/register', async (req, res, next) => {
       email: req.body.email,
       password: hash
     }).save()
+
+    const exampleDecks = await fs.readdir('./example-decks')
+    exampleDecks.map(async deck => {
+      await new Deck({ 
+        owner: newUser._id,
+        ...require('../example-decks/' + deck) 
+      }).save()
+    })
 
     res.json(newUser)
   }
