@@ -1,0 +1,406 @@
+{
+    "name": "Spanish",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png",
+    "cards": [
+        {
+            "front": "gracias",
+            "back": "thanks"
+        },
+        {
+            "front": "ser",
+            "back": "be"
+        },
+        {
+            "front": "a",
+            "back": "to"
+        },
+        {
+            "front": "ir",
+            "back": "to go"
+        },
+        {
+            "front": "estar",
+            "back": "to be"
+        },
+        {
+            "front": "bueno",
+            "back": "good"
+        },
+        {
+            "front": "de",
+            "back": "of, from"
+        },
+        {
+            "front": "su",
+            "back": "your, her, his, their"
+        },
+        {
+            "front": "hacer",
+            "back": "to do, to make"
+        },
+        {
+            "front": "amigo",
+            "back": "friend"
+        },
+        {
+            "front": "por favor",
+            "back": "please"
+        },
+        {
+            "front": "no",
+            "back": "no"
+        },
+        {
+            "front": "en",
+            "back": "on, in"
+        },
+        {
+            "front": "haber",
+            "back": "\"to have\" as an auxiliary verb"
+        },
+        {
+            "front": "tener",
+            "back": "to have, to possess"
+        },
+        {
+            "front": "un, uno, una",
+            "back": "a, one"
+        },
+        {
+            "front": "ahora",
+            "back": "now"
+        },
+        {
+            "front": "y",
+            "back": "and"
+        },
+        {
+            "front": "que, qué",
+            "back": "that, what"
+        },
+        {
+            "front": "por",
+            "back": "for, by"
+        },
+        {
+            "front": "amar",
+            "back": "to love"
+        },
+        {
+            "front": "quién",
+            "back": "who"
+        },
+        {
+            "front": "para",
+            "back": "for, to"
+        },
+        {
+            "front": "venir",
+            "back": "to come"
+        },
+        {
+            "front": "porque",
+            "back": "because"
+        },
+        {
+            "front": "el, la, los, las",
+            "back": "the"
+        },
+        {
+            "front": "antes",
+            "back": "before"
+        },
+        {
+            "front": "más",
+            "back": "more"
+        },
+        {
+            "front": "bien",
+            "back": "\"well\" as an adverb"
+        },
+        {
+            "front": "aquí, allí",
+            "back": "here, there"
+        },
+        {
+            "front": "querer",
+            "back": "to want, to love"
+        },
+        {
+            "front": "hola",
+            "back": "hello"
+        },
+        {
+            "front": "tú",
+            "back": "you"
+        },
+        {
+            "front": "poder",
+            "back": "to be able"
+        },
+        {
+            "front": "gustar",
+            "back": "to be pleasing"
+        },
+        {
+            "front": "poner",
+            "back": "to put"
+        },
+        {
+            "front": "casi",
+            "back": "almost"
+        },
+        {
+            "front": "saber",
+            "back": "to know"
+        },
+        {
+            "front": "como",
+            "back": "like, as"
+        },
+        {
+            "front": "donde",
+            "back": "where"
+        },
+        {
+            "front": "dar",
+            "back": "to give"
+        },
+        {
+            "front": "pero",
+            "back": "but"
+        },
+        {
+            "front": "se",
+            "back": "itself, herself, himself, themselves"
+        },
+        {
+            "front": "mucho",
+            "back": "much"
+        },
+        {
+            "front": "nuevo",
+            "back": "new"
+        },
+        {
+            "front": "cuando",
+            "back": "when"
+        },
+        {
+            "front": "chico, chica",
+            "back": "boy, girl"
+        },
+        {
+            "front": "entender",
+            "back": "to understand"
+        },
+        {
+            "front": "si",
+            "back": "if"
+        },
+        {
+            "front": "o",
+            "back": "or"
+        },
+        {
+            "front": "feliz",
+            "back": "happy"
+        },
+        {
+            "front": "todo",
+            "back": "all, every"
+        },
+        {
+            "front": "mismo",
+            "back": "same"
+        },
+        {
+            "front": "muy",
+            "back": "very"
+        },
+        {
+            "front": "nunca",
+            "back": "never"
+        },
+        {
+            "front": "yo, me",
+            "back": "I, me"
+        },
+        {
+            "front": "sí",
+            "back": "yes"
+        },
+        {
+            "front": "grande, gran",
+            "back": "big, great"
+        },
+        {
+            "front": "deber",
+            "back": "to owe, should"
+        },
+        {
+            "front": "usted",
+            "back": "you"
+        },
+        {
+            "front": "bajo",
+            "back": "low, under"
+        },
+        {
+            "front": "otro",
+            "back": "other"
+        },
+        {
+            "front": "salir",
+            "back": "to leave"
+        },
+        {
+            "front": "hora",
+            "back": "hour; see also lesson on telling time"
+        },
+        {
+            "front": "desde",
+            "back": "from"
+        },
+        {
+            "front": "ver",
+            "back": "to see"
+        },
+        {
+            "front": "malo, mal",
+            "back": "bad"
+        },
+        {
+            "front": "pensar",
+            "back": "to think"
+        },
+        {
+            "front": "hasta",
+            "back": "until"
+        },
+        {
+            "front": "tanto, tan",
+            "back": "used in making comparisons"
+        },
+        {
+            "front": "entre",
+            "back": "between, among"
+        },
+        {
+            "front": "durante",
+            "back": "during"
+        },
+        {
+            "front": "llevar",
+            "back": "to wear, to carry"
+        },
+        {
+            "front": "siempre",
+            "back": "always"
+        },
+        {
+            "front": "empezar",
+            "back": "to begin"
+        },
+        {
+            "front": "él, ella, ellos, ellas",
+            "back": "he, she, they"
+        },
+        {
+            "front": "leer",
+            "back": "to read"
+        },
+        {
+            "front": "cosa",
+            "back": "thing"
+        },
+        {
+            "front": "sacar",
+            "back": "to take out, to remove"
+        },
+        {
+            "front": "conocer",
+            "back": "to know"
+        },
+        {
+            "front": "primero",
+            "back": "first"
+        },
+        {
+            "front": "andar",
+            "back": "to walk"
+        },
+        {
+            "front": "sobre",
+            "back": "over, about"
+        },
+        {
+            "front": "echar",
+            "back": "to throw"
+        },
+        {
+            "front": "sin",
+            "back": "without"
+        },
+        {
+            "front": "decir",
+            "back": "to say"
+        },
+        {
+            "front": "trabajar",
+            "back": "to work"
+        },
+        {
+            "front": "nosotros",
+            "back": "we, us"
+        },
+        {
+            "front": "también",
+            "back": "also"
+        },
+        {
+            "front": "adiós",
+            "back": "goodbye"
+        },
+        {
+            "front": "comer",
+            "back": "to eat"
+        },
+        {
+            "front": "triste",
+            "back": "sad"
+        },
+        {
+            "front": "país",
+            "back": "country"
+        },
+        {
+            "front": "escuchar",
+            "back": "to listen, to listen to"
+        },
+        {
+            "front": "hombre",
+            "back": "man"
+        },
+        {
+            "front": "mujer",
+            "back": "woman"
+        },
+        {
+            "front": "le",
+            "back": "indirect-object pronoun"
+        },
+        {
+            "front": "creer",
+            "back": "to believe, to think"
+        },
+        {
+            "front": "encontrar",
+            "back": "to find"
+        },
+        {
+            "front": "beber",
+            "back": "to drink"
+        }
+    ]
+}

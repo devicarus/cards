@@ -1,0 +1,494 @@
+{
+    "name": "German",
+    "image": "https://www.demos.org/sites/default/files/blog/german-flag.jpg",
+    "cards": [
+        {
+            "front": "Abbiegen",
+            "back": "zabočit"
+        },
+        {
+            "front": "Anfahren",
+            "back": "srazit"
+        },
+        {
+            "front": "Aufnehmen",
+            "back": "sepsat"
+        },
+        {
+            "front": "Aufstellen",
+            "back": "postavit"
+        },
+        {
+            "front": "Ausfühlen",
+            "back": "vyplnit"
+        },
+        {
+            "front": "Der Baum",
+            "back": "strom"
+        },
+        {
+            "front": "Bremsen",
+            "back": "brzdit"
+        },
+        {
+            "front": "Dicht",
+            "back": "hustý"
+        },
+        {
+            "front": "Einschlalten",
+            "back": "zapnout"
+        },
+        {
+            "front": "Die Folg",
+            "back": "následek"
+        },
+        {
+            "front": "Gefährlich",
+            "back": "nebezpečný"
+        },
+        {
+            "front": "Geraten in",
+            "back": "dostat (se)"
+        },
+        {
+            "front": "Glatt",
+            "back": "kluzký"
+        },
+        {
+            "front": "Der helikopter",
+            "back": "Helikoptéra"
+        },
+        {
+            "front": "Herausholen",
+            "back": "vytáhnout"
+        },
+        {
+            "front": "Hin und her",
+            "back": "sem a tam"
+        },
+        {
+            "front": "Jemand",
+            "back": "někdo "
+        },
+        {
+            "front": "Der kopfhörer",
+            "back": "sluchátko"
+        },
+        {
+            "front": "Der Krankenwagen",
+            "back": "sanitka"
+        },
+        {
+            "front": "Die kreuzung",
+            "back": "křižovatka"
+        },
+        {
+            "front": "Legan",
+            "back": "položit"
+        },
+        {
+            "front": "Leisten",
+            "back": "vykonat"
+        },
+        {
+            "front": "Niemand",
+            "back": "nikdo"
+        },
+        {
+            "front": "Nebenan",
+            "back": "vedle"
+        },
+        {
+            "front": "Der Polizeiwagen",
+            "back": "policejní vůz"
+        },
+        {
+            "front": "Der Polizist",
+            "back": "policista"
+        },
+        {
+            "front": "Die Polizistin",
+            "back": "policistka"
+        },
+        {
+            "front": "Das protokol",
+            "back": "protokol"
+        },
+        {
+            "front": "Der Radfahrer",
+            "back": "cyklistka "
+        },
+        {
+            "front": "Der Radweg",
+            "back": "stezka pro cyklisty"
+        },
+        {
+            "front": "Der Sanitäter",
+            "back": "záchranář"
+        },
+        {
+            "front": "Das Schloudern",
+            "back": "smyk"
+        },
+        {
+            "front": "Sich shminken",
+            "back": "líčit se "
+        },
+        {
+            "front": "Schuld sein an Schuld haben",
+            "back": "vinen na "
+        },
+        {
+            "front": "Sogar",
+            "back": "dokonce"
+        },
+        {
+            "front": "Sperren",
+            "back": "uzavřít"
+        },
+        {
+            "front": "Der stau",
+            "back": "dopravní zácpa"
+        },
+        {
+            "front": "Die Tankstelle",
+            "back": "benzínová pumpa"
+        },
+        {
+            "front": "Die Telefonzelle",
+            "back": "telefoní budka"
+        },
+        {
+            "front": "Die Trage",
+            "back": "nosítka"
+        },
+        {
+            "front": "Überfahren",
+            "back": "přejet"
+        },
+        {
+            "front": "Überholen",
+            "back": "předjíždět "
+        },
+        {
+            "front": "Übersehen",
+            "back": "přehlédnout"
+        },
+        {
+            "front": "Der Unfall",
+            "back": "nehoda"
+        },
+        {
+            "front": "Der Unfallbericht",
+            "back": "zpráva o nehodě"
+        },
+        {
+            "front": "Unglaublich",
+            "back": "neuvěřitelný"
+        },
+        {
+            "front": "Umleiten",
+            "back": "odkoupit"
+        },
+        {
+            "front": "Der Verkehr",
+            "back": "doprava"
+        },
+        {
+            "front": "Verletzt",
+            "back": "zraněný"
+        },
+        {
+            "front": "Verletzt sein",
+            "back": "být zraněný"
+        },
+        {
+            "front": "Sich vorstellen",
+            "back": "představit si"
+        },
+        {
+            "front": "Der Warnblinker",
+            "back": "výstražné světlo, blinker"
+        },
+        {
+            "front": "Das Warndreieck",
+            "back": "výstražný trojúhelník"
+        },
+        {
+            "front": "Das Warnschhild",
+            "back": "dopravní značka"
+        },
+        {
+            "front": "Die warnwest",
+            "back": "reflexní vesta"
+        },
+        {
+            "front": "Weiterfahren",
+            "back": "pokračovat v jízdě"
+        },
+        {
+            "front": "Das Werbeplakat",
+            "back": "reklamní plakát"
+        },
+        {
+            "front": "zusehen",
+            "back": "přihlížet"
+        },
+        {
+            "front": "abstellen",
+            "back": "odstavit"
+        },
+        {
+            "front": "angemessen",
+            "back": "přiměřený"
+        },
+        {
+            "front": "aussteigen",
+            "back": "vystoupit"
+        },
+        {
+            "front": "Die Autpbahn",
+            "back": "dálnice"
+        },
+        {
+            "front": "Die Autobahnpolizei",
+            "back": "dálniční policie"
+        },
+        {
+            "front": "Die Bauarbeit",
+            "back": "stavební práce"
+        },
+        {
+            "front": "Defekt",
+            "back": "defektní, poškozený"
+        },
+        {
+            "front": "Die Entfernung",
+            "back": "vzdálenost"
+        },
+        {
+            "front": "Das Fahrzeug",
+            "back": "vozidlo"
+        },
+        {
+            "front": "Der Fussgänger",
+            "back": "chodec"
+        },
+        {
+            "front": "Die Geschwindigkeit",
+            "back": "rychlost"
+        },
+        {
+            "front": "Keinesfalls",
+            "back": "v žádném případě"
+        },
+        {
+            "front": "Die Leitplanke",
+            "back": "svodidlo"
+        },
+        {
+            "front": "Liegengeblieben",
+            "back": "odstavný"
+        },
+        {
+            "front": "Links",
+            "back": "vlevo"
+        },
+        {
+            "front": "Die Panne",
+            "back": "porucha"
+        },
+        {
+            "front": "Der Pannenstreifen",
+            "back": "odstavný pruh"
+        },
+        {
+            "front": "Plötzlich",
+            "back": "náhle, tu"
+        },
+        {
+            "front": "Die  Rüchfahrt",
+            "back": "zpáteční cesta"
+        },
+        {
+            "front": "Schrecklich",
+            "back": "strašný"
+        },
+        {
+            "front": "Der Schrott",
+            "back": "šrot, odpad"
+        },
+        {
+            "front": "Statt",
+            "back": "místo"
+        },
+        {
+            "front": "Das Stehen",
+            "back": "stání"
+        },
+        {
+            "front": "Sterben",
+            "back": "zemřít"
+        },
+        {
+            "front": "Trotz",
+            "back": "přes, navzdory"
+        },
+        {
+            "front": "Die Überholspur",
+            "back": "předjížděcí pruh"
+        },
+        {
+            "front": "Überleben",
+            "back": "přežít"
+        },
+        {
+            "front": "Die Umleitung",
+            "back": "objížďka "
+        },
+        {
+            "front": "Die Verkehrsmeldung",
+            "back": "dopravní hlášení"
+        },
+        {
+            "front": "Versuchen",
+            "back": "pokusit se"
+        },
+        {
+            "front": "Die Vollbremsung",
+            "back": "plné zabrzdění"
+        },
+        {
+            "front": "Die Vorsicht",
+            "back": "opatrnost"
+        },
+        {
+            "front": "Die Warnblinkanlage",
+            "back": "výstražné světelné zařízení"
+        },
+        {
+            "front": "Das wunder",
+            "back": "zázrak"
+        },
+        {
+            "front": "Allerseits",
+            "back": "všem, vespolek"
+        },
+        {
+            "front": "Der Anhänger",
+            "back": "přívěs"
+        },
+        {
+            "front": "Die Bedingung",
+            "back": "podmínka"
+        },
+        {
+            "front": "Buchen",
+            "back": "objednat "
+        },
+        {
+            "front": "Eingekauft",
+            "back": "nakoupený"
+        },
+        {
+            "front": "Die Ferienwohnung",
+            "back": "prázdninový byt"
+        },
+        {
+            "front": "Heiss",
+            "back": "horko"
+        },
+        {
+            "front": "Irgendwo",
+            "back": "někde"
+        },
+        {
+            "front": "Die Kanutour",
+            "back": "jízda na kánoi"
+        },
+        {
+            "front": "Lust und Laune",
+            "back": "chuť a nálada"
+        },
+        {
+            "front": "Der Motorbootfahrer",
+            "back": "řidič motorového člunu"
+        },
+        {
+            "front": "Der Proviant",
+            "back": "zásoby na cestu"
+        },
+        {
+            "front": "Ökologisch",
+            "back": "ekologicky"
+        },
+        {
+            "front": "Der Ort",
+            "back": "místo"
+        },
+        {
+            "front": "Radeln",
+            "back": "jezdit na kole"
+        },
+        {
+            "front": "Reichen",
+            "back": "stačit"
+        },
+        {
+            "front": "Rund",
+            "back": "okolo"
+        },
+        {
+            "front": "Das Segelboot",
+            "back": "plachetnice"
+        },
+        {
+            "front": "Der Segler",
+            "back": "jachtař"
+        },
+        {
+            "front": "Der Surfer",
+            "back": "surfař"
+        },
+        {
+            "front": "Der Taucher",
+            "back": "potapěč"
+        },
+        {
+            "front": "Teolweise",
+            "back": "částečně"
+        },
+        {
+            "front": "Übernachten",
+            "back": "přenocovat"
+        },
+        {
+            "front": "Umziehen",
+            "back": "stěhovat se"
+        },
+        {
+            "front": "Der Umzung",
+            "back": "stěhování"
+        },
+        {
+            "front": "Im Voraus",
+            "back": "předem"
+        },
+        {
+            "front": "Die Wahl",
+            "back": "volba"
+        },
+        {
+            "front": "Das Wassersportrevier",
+            "back": "ráj pro vodní sporty"
+        },
+        {
+            "front": "Das Zelt",
+            "back": "stan"
+        },
+        {
+            "front": "Zu",
+            "back": "příliš"
+        }
+    ]
+}
