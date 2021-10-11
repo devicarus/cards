@@ -18,7 +18,8 @@ setupRoutes(app)
 
 mongoose.connect('mongodb://mongo:27017/cards', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 })
 mongoose.set('useCreateIndex', true)
 
