@@ -45,6 +45,11 @@ router.post('/login', (req, res, next) => {
         message: 'Something is not right',
         user
       })
+    } else if (user.status == "Pending") {
+      res.status(400).json({
+        message: 'Email not verified',
+        user
+      })
     } else if (!user) {
       res.status(400).json({
         message: 'Wrong email or password',
