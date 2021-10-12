@@ -59,4 +59,31 @@ router.post('/login', (req, res, next) => {
   })(req, res)
 })
 
+router.post('/confirm/:id', async (req, res, next) => {
+  const user = await User.findById(req.params.id)
+
+  if (user) {
+    if (user.status == "Pending") {
+      const result = await User.findByIdAndUpdate(req.params.id, { status: "Active" })
+      if (result) {
+        res.status(200).json({
+          message: 'Email successfuly verified'
+        })
+      } else {
+        res.status(500).json({
+          message: 'Something went wrong'
+        })
+      }
+    } else {
+      res.status(400).json({
+        message: 'Email already verified'
+      })
+    }
+  } else {
+    res.status(400).json({
+      message: 'Account does not exist'
+    })
+  }
+})
+
 module.exports = router
