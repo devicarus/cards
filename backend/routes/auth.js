@@ -5,6 +5,8 @@ const passport = require('passport')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
+const isEmail = require('../helpers/isEmail')
+
 const User = require('../models/User')
 const Deck = require('../models/Deck')
 
@@ -13,8 +15,7 @@ const router = express.Router()
 router.post('/register', async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email })
 
-  const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  if (!emailPattern.test(req.body.email)) {
+  if (!isEmail(req.body.email)) {
     res.status(400).json({
       message: "Not an email"
     })
