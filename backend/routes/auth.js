@@ -28,9 +28,9 @@ router.post('/register', async (req, res, next) => {
 
     const exampleDecks = await fs.readdir('./example-decks')
     exampleDecks.map(async deck => {
-      await new Deck({ 
+      await new Deck({
         owner: newUser._id,
-        ...require('../example-decks/' + deck) 
+        ...require('../example-decks/' + deck)
       }).save()
     })
 
