@@ -13,7 +13,12 @@ const router = express.Router()
 router.post('/register', async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email })
 
-  if (user) {
+  const emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  if (!emailPattern.test(req.body.email)) {
+    res.status(400).json({
+      message: "Not an email"
+    })
+  } else if (user) {
     res.status(400).json({
       message: "Email already exists"
     })
