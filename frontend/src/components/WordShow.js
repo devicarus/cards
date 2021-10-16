@@ -34,6 +34,8 @@ function WordChoice(props) {
                         transformStyle: "preserve-3d",
                         transform: (isFlipped ? "rotateY(180deg)" : ""),
 
+                        userSelect: "none",
+
                         "&:hover": {
                             transition: "transform 0.4s"
                         }
