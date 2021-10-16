@@ -44,6 +44,7 @@ function WordChoice(props) {
                         sx={{
                             position: "absolute",
                             backfaceVisibility: "hidden",
+                            borderRadius: "30px",
 
                             width: "100%",
                             height: "100%",
@@ -51,6 +52,7 @@ function WordChoice(props) {
                             alignItems: "center",
                             justifyContent: "center",
                         }}
+                        bg="white"
                     >
                         <Text
                             sx={{
@@ -73,7 +75,7 @@ function WordChoice(props) {
                             alignItems: "center",
                             justifyContent: "center",
                         }}
-                        bg="background"
+                        bg="white"
                     >
                         <Text
                             sx={{
