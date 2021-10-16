@@ -21,7 +21,7 @@ router.post('/register', async (req, res, next) => {
     })
   } else if (user) {
     res.status(400).json({
-      message: "Email already exists"
+      message: "Email already used"
     })
   } else {
     const salt = await bcrypt.genSalt(10)
@@ -48,7 +48,7 @@ router.post('/login', (req, res, next) => {
   passport.authenticate('local', { session: false }, (err, user, info) => {
     if (err) {
       res.status(500).json({
-        message: 'Something is not right',
+        message: 'Something went wrong',
         user
       })
     } else if (user.status == "Pending") {
