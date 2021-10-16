@@ -1,33 +1,27 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect, Link, useParams, useHistory, useLocation } from 'react-router-dom'
+import { Redirect, Link, useParams, useHistory } from 'react-router-dom'
 
 import { setToken } from '../store/reducers/user'
 
 import { Flex, Box, Button, Text, NavLink } from 'theme-ui'
 import Field from '../components/wrappers/Field'
 
-function useQuery() {
-    return new URLSearchParams(useLocation().search);
-}
-
 function Login() {
     const dispatch = useDispatch()
     const { mode } = useParams()
     const history = useHistory()
-    const query = useQuery()
 
     const [form, setForm] = useState({
         email: "",
         password: ""
     })
 
-    const [error, setError] = useState({
+    const [notice, setNotice] = useState({
         fields: [],
-        text: ""
+        text: "",
+        type: ""
     })
-
-    const token = useSelector(state => state.user.token)
 
     const login = async (form) => {
         const response = await fetch("/api/auth/login", {
@@ -37,18 +31,22 @@ function Login() {
 
         const data = await response.json()
 
-        switch (response.status) {
-            case 200:
-                dispatch(setToken(data.token))
-                break;
+        if (response.status == 200) {
+            dispatch(setToken(data.token))
+        } else {
+            switch (data.message) {
+                case "Wrong email or password":
+                    setNotice({ fields: ["email", "password"], text: data.message, type: "Error" })
+                    break;
 
-            case 400:
-                setError({ fields: ["email", "password"], text: "Wrong email or password" })
-                break;
-
-            default:
-                setError({ fields: [], text: "Something went wrong, please try again later" })
-                break;
+                case "Email not verified":
+                    setNotice({ fields: [], text: data.message, type: "Error" })
+                    break;
+            
+                default:
+                    setNotice({ fields: [], text: "Something went wrong, please try again later", type: "Error" })
+                    break;
+            }
         }
     }
 
@@ -58,23 +56,30 @@ function Login() {
             body: new URLSearchParams(form)
         })
 
-        switch (response.status) {
-            case 200:
-                history.push("/signin?notice=registered")
-                break;
+        const data = await response.json()
 
-            case 400:
-                setError({ fields: ["email"], text: "Email already used" })
-                break;
+        if (response.status == 200) {
+            history.push("/signin")
+            setNotice({ fields: [], text: "Verify your email please", type: "Info" })
+        } else {
+            switch (data.message) {
+                case "Not an email":
+                    setNotice({ fields: ["email"], text: "Please enter an email", type: "Error" })
+                    break;
 
-            default:
-                setError({ fields: [], text: "Something went wrong, please try again later" })
-                break;
+                case "Email already used":
+                    setNotice({ fields: [], text: data.message, type: "Error" })
+                    break;
+            
+                default:
+                    setNotice({ fields: [], text: "Something went wrong, please try again later", type: "Error" })
+                    break;
+            }
         }
     }
 
     return (<>
-        {token &&
+        { useSelector(state => state.user.token) &&
             <Redirect to='/' />
         }
 
@@ -109,7 +114,7 @@ function Login() {
                         as={Link}
                         to="/signin"
                         onClick={() => {
-                            setError({
+                            setNotice({
                                 fields: [],
                                 text: ""
                             })
@@ -132,7 +137,7 @@ function Login() {
                         as={Link}
                         to="/signup"
                         onClick={() => {
-                            setError({
+                            setNotice({
                                 fields: [],
                                 text: ""
                             })
@@ -150,21 +155,10 @@ function Login() {
                         register(form)
                     }
                 }}>
-                    <Field icon="Mail" placeholder="Email" invalid={error.fields.includes("email")} onChange={e => setForm({ ...form, email: e.target.value })} containerStyle={{ marginBottom: "5px" }} />
-                    <Field icon="Lock" placeholder="Password" invalid={error.fields.includes("password")} onChange={e => setForm({ ...form, password: e.target.value })} type="password" />
+                    <Text mb={3} color={notice.type == "Error" ? "danger" : "primary"} sx={{ fontWeight: "bold", textAlign: "center" }}>{notice.text}</Text>
 
-                    <Text mt={2} color="#FF3C38" sx={{ fontWeight: "bold", textAlign: "center" }}>{error.text}</Text>
-
-                    <Text mt={2} color="#16db65" sx={{ fontWeight: "bold", textAlign: "center" }}>{(() => {
-                        switch (query.get("notice")) {
-                            case "registered":
-                                return "You can now Sign In"
-
-                            default:
-                                return
-                        }
-                    })()}</Text>
-
+                    <Field icon="Mail" placeholder="Email" invalid={notice.fields.includes("email")} onChange={e => setForm({ ...form, email: e.target.value })} containerStyle={{ marginBottom: "5px" }} />
+                    <Field icon="Lock" placeholder="Password" invalid={notice.fields.includes("password")} onChange={e => setForm({ ...form, password: e.target.value })} type="password" />
 
                     <Button type="submit" sx={{ width: "100%" }} mt="30px">Sign {mode}</Button>
                 </Box>
