@@ -42,7 +42,7 @@ function Login() {
                 case "Email not verified":
                     setNotice({ fields: [], text: data.message, type: "Error" })
                     break;
-            
+
                 default:
                     setNotice({ fields: [], text: "Something went wrong, please try again later", type: "Error" })
                     break;
@@ -70,7 +70,7 @@ function Login() {
                 case "Email already used":
                     setNotice({ fields: [], text: data.message, type: "Error" })
                     break;
-            
+
                 default:
                     setNotice({ fields: [], text: "Something went wrong, please try again later", type: "Error" })
                     break;
@@ -79,7 +79,7 @@ function Login() {
     }
 
     return (<>
-        { useSelector(state => state.user.token) &&
+        {useSelector(state => state.user.token) &&
             <Redirect to='/' />
         }
 
