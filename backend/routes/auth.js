@@ -97,4 +97,10 @@ router.post('/confirm/:id', async (req, res, next) => {
   }
 })
 
+router.get('/info', passport.authenticate('jwt', { session: false }), async (req, res, next) => {
+  res.json({
+    email: req.user.email
+  })
+})
+
 module.exports = router
