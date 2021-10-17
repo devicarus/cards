@@ -71,6 +71,10 @@ function Login() {
                     setNotice({ fields: [], text: data.message, type: "Error" })
                     break;
 
+                case "Empty password":
+                    setNotice({ fields: ["password"], text: "Please enter a password", type: "Error" })
+                    break;
+
                 default:
                     setNotice({ fields: [], text: "Something went wrong, please try again later", type: "Error" })
                     break;
