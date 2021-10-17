@@ -53,7 +53,7 @@ function Home() {
                     justifyItems: "center"
                 }}>
                     {decks.map(deck =>
-                        <Box sx={{ width: "144px", cursor: "pointer" }} onClick={() => history.push("/playground/" + deck._id)}>
+                        <Box key={deck._id} sx={{ width: "144px", cursor: "pointer" }} onClick={() => history.push("/playground/" + deck._id)}>
                             <Box sx={{
                                 boxShadow: "0 2px 6px rgba(0,0,0,.1),0 6px 0 -1px #fff,0 7px 6px rgba(0,0,0,.1),0 11px 0 -1px #fff,0 12px 6px rgba(0,0,0,.1)",
                                 borderRadius: "18px",
