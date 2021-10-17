@@ -52,18 +52,15 @@ router.post('/login', (req, res, next) => {
   passport.authenticate('local', { session: false }, (err, user, info) => {
     if (err) {
       res.status(500).json({
-        message: 'Something went wrong',
-        user
+        message: 'Something went wrong'
       })
     } else if (user.status == "Pending") {
       res.status(400).json({
-        message: 'Email not verified',
-        user
+        message: 'Email not verified'
       })
     } else if (!user) {
       res.status(400).json({
-        message: 'Wrong email or password',
-        user
+        message: 'Wrong email or password'
       })
     } else {
       res.json({
