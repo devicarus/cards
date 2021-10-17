@@ -109,6 +109,16 @@ const theme = {
             }
         }
     },
+    links: {
+        nav: {
+            color: "white",
+            fontWeight: "bold",
+
+            "&:hover": {
+                color: "white"
+            }
+        }
+    },
     sizes: {
         container: "1082px"
     },
