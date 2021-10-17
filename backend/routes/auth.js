@@ -23,6 +23,10 @@ router.post('/register', async (req, res, next) => {
     res.status(400).json({
       message: "Email already used"
     })
+  } else if (req.body.password == "") {
+    res.status(400).json({
+      message: "Empty password"
+    })
   } else {
     const salt = await bcrypt.genSalt(10)
     const hash = await bcrypt.hash(req.body.password, salt)
