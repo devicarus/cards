@@ -31,7 +31,7 @@ function Login() {
 
         const data = await response.json()
 
-        if (response.status == 200) {
+        if (response.status === 200) {
             dispatch(setToken(data.token))
         } else {
             switch (data.message) {
@@ -58,7 +58,7 @@ function Login() {
 
         const data = await response.json()
 
-        if (response.status == 200) {
+        if (response.status === 200) {
             history.push("/signin")
             setNotice({ fields: [], text: "Verify your email please", type: "Info" })
         } else {
@@ -159,7 +159,7 @@ function Login() {
                         register(form)
                     }
                 }}>
-                    <Text mb={3} color={notice.type == "Error" ? "danger" : "primary"} sx={{ fontWeight: "bold", textAlign: "center" }}>{notice.text}</Text>
+                    <Text mb={3} color={notice.type === "Error" ? "danger" : "primary"} sx={{ fontWeight: "bold", textAlign: "center" }}>{notice.text}</Text>
 
                     <Field icon="Mail" placeholder="Email" invalid={notice.fields.includes("email")} onChange={e => setForm({ ...form, email: e.target.value })} containerStyle={{ marginBottom: "5px" }} />
                     <Field icon="Lock" placeholder="Password" invalid={notice.fields.includes("password")} onChange={e => setForm({ ...form, password: e.target.value })} type="password" />
