@@ -8,8 +8,11 @@ function NavLink(props) {
     const Icon = Icons[props.icon]
 
     return (
-        <ThemedLink to={props.to} as={Link} p={2} sx={{ display: "flex", ...props.style }}>
-            { props.icon &&
+        <ThemedLink to={props.to} as={Link} sx={{
+            display: "flex",
+            ...props.style
+        }}>
+            {props.icon &&
                 <Icon style={{ marginRight: "5px" }} />
             }
             {props.label}
