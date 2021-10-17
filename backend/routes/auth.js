@@ -64,8 +64,7 @@ router.post('/login', (req, res, next) => {
       })
     } else {
       res.json({
-        token: jwt.sign(user.toJSON(), process.env.JWT_SECRET),
-        user
+        token: jwt.sign(user.toJSON(), process.env.JWT_SECRET)
       })
     }
   })(req, res)
