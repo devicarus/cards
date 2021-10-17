@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
-import { setToken } from '../store/reducers/user'
+import { Container, Box, Image, Text } from 'theme-ui'
+import { Plus } from 'react-feather'
 
-import { Flex, Container, Box, Image, Text, Button } from 'theme-ui'
-import { Plus, LogOut } from 'react-feather'
-
-//import NavbarLink from '../components/wrappers/NavbarLink'
+import NavBar from '../components/NavBar'
 
 function Home() {
     const history = useHistory()
     const token = useSelector(state => state.user.token)
-    const dispatch = useDispatch()
 
     const [decks, setDecks] = useState([])
 
@@ -25,19 +22,7 @@ function Home() {
     }, [])    
 
     return (<>
-        <Flex as='nav'
-            sx={{
-                height: "60px",
-                backgroundColor: "primary",
-                boxShadow: "inset 0 0 4px rgb(31, 205, 251), 0 0 2px rgba(0,0,0,0.30)",
-                textTransform: "uppercase"
-            }}
-        >
-            <Container sx={{ display: "flex", alignItems: "center" }}>
-                {/*<NavbarLink to='/' icon="Home" label="Home" />*/}
-                <Button onClick={() => dispatch(setToken(null))} variant="navbar" style={{ marginLeft: "auto", display: "flex" }}><LogOut style={{ marginRight: "5px" }} /> Log Out</Button>
-            </Container>
-        </Flex>
+        <NavBar />
         <Container>
             <Box sx={{
                 boxShadow: "0 0 25px 0 rgba(0,0,0,.04)",
