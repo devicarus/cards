@@ -10,7 +10,7 @@ function NavLink(props) {
     return (
         <ThemedLink to={props.to} as={Link} sx={{
             display: "flex",
-            ...props.style
+            ...props.sx
         }}>
             {props.icon &&
                 <Icon style={{ marginRight: "5px" }} />
