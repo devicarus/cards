@@ -14,8 +14,8 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} protected />
         <Route path="/sign:mode" exact component={Login} />
-        <Route path="/playground/:id" component={Playground} />
-        <Route path="/settings" component={Settings} />
+        <Route path="/playground/:id" component={Playground} protected />
+        <Route path="/settings" exact component={Settings} protected />
       </Switch>
     </Router>
   );
