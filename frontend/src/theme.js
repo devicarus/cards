@@ -116,6 +116,9 @@ const theme = {
 
             "&:hover": {
                 color: "white"
+            },
+            "&:visited": {
+                color: "white"
             }
         }
     },
