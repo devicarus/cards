@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect, Link, useParams, useHistory } from 'react-router-dom'
+import { Redirect, useParams, useHistory } from 'react-router-dom'
 
 import { setToken } from '../store/reducers/user'
 
-import { Flex, Box, Button, Text, NavLink } from 'theme-ui'
+import { Flex, Box, Button, Text } from 'theme-ui'
 import Field from '../components/wrappers/Field'
+import Link from '../components/wrappers/Link'
+
 
 function Login() {
     const dispatch = useDispatch()
@@ -103,7 +105,7 @@ function Login() {
                 p="30px"
             >
                 <Flex mb="30px">
-                    <NavLink
+                    <Link
                         sx={{
                             flexGrow: 1,
                             fontSize: 4,
@@ -125,8 +127,8 @@ function Login() {
                         }}
                     >
                         <Text sx={{ textAlign: "center" }}>Sign In</Text>
-                    </NavLink>
-                    <NavLink
+                    </Link>
+                    <Link
                         sx={{
                             flexGrow: 1,
                             fontSize: 4,
@@ -148,7 +150,7 @@ function Login() {
                         }}
                     >
                         <Text sx={{ textAlign: "center" }}>Sign Up</Text>
-                    </NavLink>
+                    </Link>
                 </Flex>
                 <Box as="form" onSubmit={e => {
                     if (mode === "in") {
