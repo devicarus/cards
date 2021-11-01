@@ -61,6 +61,8 @@ const theme = {
             fontFamily: 'regular',
             fontWeight: 'bold',
 
+            padding: 0,
+
             textTransform: 'uppercase',
 
             cursor: "pointer"

@@ -29,10 +29,10 @@ function Navbar() {
                 boxShadow: "inset 0 0 4px rgb(31, 205, 251), 0 0 2px rgba(0,0,0,0.30)"
             }}
         >
-            <Container sx={{ display: "flex", alignItems: "center" }}>
+            <Container sx={{ display: "flex", alignItems: "center" }} px="3" >
                 <NavLink to='/' label="cards" sx={{ fontSize: 5 }} />
-                <NavLink to='/settings' label={email} sx={{ marginLeft: "auto", fontSize: 2 }} />
-                <Button onClick={() => dispatch(setToken(""))} variant="navbar" sx={{ display: "flex" }}><LogOut style={{ marginRight: "5px" }} /></Button>
+                <NavLink to='/settings' label={email} sx={{ marginLeft: "auto", marginRight: 3, fontSize: 2 }} />
+                <Button onClick={() => dispatch(setToken(""))} variant="navbar" sx={{ display: "flex" }}><LogOut /></Button>
             </Container>
         </Flex>
     )
