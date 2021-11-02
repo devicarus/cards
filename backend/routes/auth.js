@@ -103,4 +103,19 @@ router.get('/info', passport.authenticate('jwt', { session: false }), async (req
   })
 })
 
+router.post('/delete', passport.authenticate('jwt', { session: false }), async (req, res, next) => {
+  if (bcrypt.compareSync(req.body.password, req.user.password)) {
+    await User.findByIdAndDelete(req.user._id)
+    await Deck.deleteMany({ owner: req.user._id })
+    
+    res.status(200).json({
+      message: 'Account successfuly deleted'
+    })
+  } else {
+    res.status(400).json({
+      message: 'Wrong password'
+    })
+  }
+})
+
 module.exports = router
