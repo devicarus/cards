@@ -45,6 +45,9 @@ const theme = {
             fontFamily: 'regular',
             fontWeight: 'bold',
 
+            background: "linear-gradient(transparent,rgba(0, 0, 0, 0.1)) top/100% 800%",
+            backgroundColor: colors.primary,
+
             borderRadius: '10px',
             textTransform: 'uppercase',
 
@@ -52,7 +55,7 @@ const theme = {
 
             transition: "0.1s",
             "&:hover": {
-                background: colors.primaryDark,
+                backgroundPosition: "bottom",
 
                 transition: "0.1s"
             }
