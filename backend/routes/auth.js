@@ -118,4 +118,21 @@ router.post('/delete', passport.authenticate('jwt', { session: false }), async (
   }
 })
 
+router.post('/password_change', passport.authenticate('jwt', { session: false }), async (req, res, next) => {
+  if (bcrypt.compareSync(req.body.old_password, req.user.password)) {
+    const salt = await bcrypt.genSalt(10)
+    const hash = await bcrypt.hash(req.body.new_password, salt)
+
+    await User.findByIdAndUpdate(req.user._id, { password: hash })
+    
+    res.status(200).json({
+      message: 'Password successfuly changed'
+    })
+  } else {
+    res.status(400).json({
+      message: 'Wrong password'
+    })
+  }
+})
+
 module.exports = router
