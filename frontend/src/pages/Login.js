@@ -153,11 +153,10 @@ function Login() {
                     </Link>
                 </Flex>
                 <Box as="form" onSubmit={e => {
+                    e.preventDefault()
                     if (mode === "in") {
-                        e.preventDefault()
                         login(form)
                     } else {
-                        e.preventDefault()
                         register(form)
                     }
                 }}>
