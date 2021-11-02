@@ -60,6 +60,25 @@ const theme = {
                 transition: "0.1s"
             }
         },
+        danger: {
+            fontFamily: 'regular',
+            fontWeight: 'bold',
+            
+            background: "linear-gradient(transparent,rgba(0, 0, 0, 0.1)) top/100% 800%",
+            backgroundColor: colors.danger,
+
+            borderRadius: '10px',
+            textTransform: 'uppercase',
+
+            cursor: "pointer",
+
+            transition: "0.1s",
+            "&:hover": {
+                backgroundPosition: "bottom",
+                
+                transition: "0.1s"
+            }
+        },
         navbar: {
             fontFamily: 'regular',
             fontWeight: 'bold',
