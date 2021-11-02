@@ -124,6 +124,11 @@ const theme = {
             }
         }
     },
+    text: {
+        heading: {
+            fontFamily: "regular"
+        }
+    },
     sizes: {
         container: "1082px"
     },
