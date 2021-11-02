@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, Box } from 'theme-ui'
+import { Container, Box, Button, Heading, Input } from 'theme-ui'
 
 import NavBar from '../components/NavBar'
 
@@ -13,9 +13,28 @@ function Settings() {
                 background: "white",
                 borderRadius: [null, "10px"],
                 marginTop: "40px",
-                padding: "30px"
+                padding: "30px",
+                display: "flex",
+                flexDirection: [ "column", "row" ],
+                gap: "30px"
             }}>
+                <Box sx={{ flexGrow: 1 }} >
+                    <Heading sx={{ marginBottom: "10px" }}>Delete Account</Heading>
+                    <Input placeholder="Password" sx={{ maxWidth: "300px" }} />
+                    <Button
+                        variant="danger"
+                        sx={{
+                            marginTop: "10px"
+                        }}
                 
+                    >Confirm</Button>
+                </Box>
+                <Box sx={{ flexGrow: 1 }} >
+                    <Heading sx={{ marginBottom: "10px" }}>Change Password</Heading>
+                    <Input placeholder="Old Password" sx={{ maxWidth: "300px" }} />
+                    <Input placeholder="New Password" sx={{ maxWidth: "300px" }} />
+                    <Button sx={{ marginTop: "10px" }}>Confirm</Button>
+                </Box>
             </Box>
         </Container>
     </>)
