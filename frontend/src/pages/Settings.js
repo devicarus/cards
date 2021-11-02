@@ -15,7 +15,7 @@ function Settings() {
                 marginTop: "40px",
                 padding: "30px",
                 display: "flex",
-                flexDirection: [ "column", "row" ],
+                flexDirection: ["column", "row"],
                 gap: "30px"
             }}>
                 <Box sx={{ flexGrow: 1 }} >
