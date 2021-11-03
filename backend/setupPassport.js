@@ -18,6 +18,7 @@ module.exports = (app) => {
             User.findById(jwt_payload._id)
                 .then(user => {
                     if (!user) return done(null, false)
+                    if (user.password !== jwt_payload.password) return done(null, false)
                     return done(null, user)
                 })
                 .catch(err => done(err))
