@@ -18,10 +18,12 @@ function Field(props) {
                 borderBottomStyle: "solid",
                 ...props.containerStyle
             }}
-            pl={2}
+            px={props.icon?2:0}
         >
-            <Icon size={20} color="gray" />
-            <Input {...props} type={type} variant="plain" />
+            { props.icon &&
+                <Icon size={20} color="gray" />
+            }
+            <Input {...props} type={type} variant="plain" sx={{ maxWidth: null }} />
             { props.type === "password" &&
                 <IconButton
                     onClick={e => {
