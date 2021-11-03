@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect, useParams, useHistory } from 'react-router-dom'
+import { Redirect, useParams, useHistory, useLocation } from 'react-router-dom'
 
 import { setToken } from '../store/reducers/user'
 
@@ -12,6 +12,7 @@ import Link from '../components/wrappers/Link'
 function Login() {
     const dispatch = useDispatch()
     const { mode } = useParams()
+    const id = new URLSearchParams(useLocation().search).get('verify')
     const history = useHistory()
 
     const [form, setForm] = useState({
@@ -24,6 +25,10 @@ function Login() {
         text: "",
         type: ""
     })
+
+    useEffect(() => {
+        if (id) confirm(id)
+    }, [id])
 
     const login = async (form) => {
         const response = await fetch("/api/auth/login", {
@@ -75,6 +80,32 @@ function Login() {
 
                 case "Empty password":
                     setNotice({ fields: ["password"], text: "Please enter a password", type: "Error" })
+                    break;
+
+                default:
+                    setNotice({ fields: [], text: "Something went wrong, please try again later", type: "Error" })
+                    break;
+            }
+        }
+    }
+
+    const confirm = async (id) => {
+        const response = await fetch("/api/auth/confirm/"+id, {
+            method: 'POST'
+        })
+
+        const data = await response.json()
+
+        if (response.status === 200) {
+            setNotice({ fields: [], text: "Email successfuly verified", type: "Info" })
+        } else {
+            switch (data.message) {
+                case "Email already verified":
+                    setNotice({ fields: [], text: data.message, type: "Error" })
+                    break;
+
+                case "Account does not exist":
+                    setNotice({ fields: [], text: data.message, type: "Error" })
                     break;
 
                 default:
