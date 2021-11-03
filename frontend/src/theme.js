@@ -172,6 +172,7 @@ const theme = {
         },
         plain: {
             border: "none",
+            borderRadius: null,
 
             "&:focus": {
                 outline: "none"
