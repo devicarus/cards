@@ -109,6 +109,8 @@ function Login() {
                         sx={{
                             flexGrow: 1,
                             fontSize: 4,
+                            fontWeight: "bold",
+                            textDecoration: mode !== "in" ? "none" : "underline",
                             color: mode !== "in" ? "muted" : "text",
                             "&:hover": {
                                 color: mode !== "in" ? "muted" : "text"
@@ -132,6 +134,8 @@ function Login() {
                         sx={{
                             flexGrow: 1,
                             fontSize: 4,
+                            fontWeight: "bold",
+                            textDecoration: mode !== "up" ? "none" : "underline",
                             color: mode !== "up" ? "muted" : "text",
                             "&:hover": {
                                 color: mode !== "up" ? "muted" : "text"
