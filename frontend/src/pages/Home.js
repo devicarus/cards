@@ -19,7 +19,7 @@ function Home() {
                 Authorization: 'Bearer ' + token
             }
         }).then(res => res.json()).then(json => setDecks(json))
-    }, [])    
+    }, [])
 
     return (<>
         <NavBar />
