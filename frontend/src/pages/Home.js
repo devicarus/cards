@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
-import { Container, Box, Image, Text } from 'theme-ui'
+import { Container, Box, Image, Text, Heading } from 'theme-ui'
 import { Plus } from 'react-feather'
 
 import NavBar from '../components/NavBar'
@@ -24,11 +24,11 @@ function Home() {
     return (<>
         <NavBar />
         <Container>
+            <Heading mt={4} ml={3} mb={2} as="h1">Dashboard</Heading>
             <Box sx={{
                 boxShadow: "0 0 25px 0 rgba(0,0,0,.04)",
                 background: "white",
                 borderRadius: [null, "10px"],
-                marginTop: "40px",
                 padding: "30px"
             }}>
                 <Box sx={{
