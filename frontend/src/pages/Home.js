@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
-import { Container, Box, Image, Text, Heading } from 'theme-ui'
+import { Container, Box, Image, Text, Heading, Flex } from 'theme-ui'
 import { Plus } from 'react-feather'
 
 import NavBar from '../components/NavBar'
+
+import Link from '../components/wrappers/Link'
 
 function Home() {
     const history = useHistory()
@@ -54,19 +56,21 @@ function Home() {
                             <Text sx={{ fontFamily: "medium" }}>{deck.name}</Text>
                         </Box>
                     )}
-                    {/*<Box sx={{ width: "144px", cursor: "pointer" }}>
-                        <Flex sx={{
-                            boxShadow: "0 2px 6px rgba(0,0,0,.1)",
-                            borderRadius: "18px",
-                            overflow: "hidden",
-                            height: "166px",
-                            marginBottom: "20px",
-                            justifyContent: "center",
-                            alignItems: "center"
-                        }}>
-                            <Plus color="lightgray" size="30%" />
-                        </Flex>
-                    </Box>*/}
+                    <Box sx={{ width: "144px", cursor: "pointer" }}>
+                        <Link to="/create">
+                            <Flex sx={{
+                                boxShadow: "0 2px 6px rgba(0,0,0,.1)",
+                                borderRadius: "18px",
+                                overflow: "hidden",
+                                height: "166px",
+                                marginBottom: "20px",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}>
+                                <Plus color="lightgray" size="30%" />
+                            </Flex>
+                        </Link>
+                    </Box>
                 </Box>
             </Box>
         </Container>
