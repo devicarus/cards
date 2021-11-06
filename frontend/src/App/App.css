@@ -1,0 +1,33 @@
+table { 
+    border: 2px solid #ddd;
+    border-collapse: separate;
+    border-left: 0;
+    border-radius: 16px;
+    border-spacing: 0px;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-collapse: separate;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th, td {
+    padding: 5px 4px 6px 4px; 
+    text-align: left;
+    vertical-align: top;
+    border-left: 2px solid #ddd;    
+}
+td {
+    border-top: 2px solid #ddd;    
+}
+thead:first-child tr:first-child th:first-child, tbody:first-child tr:first-child td:first-child {
+    border-radius: 16px 0 0 0;
+}
+thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td:first-child {
+    border-radius: 0 0 0 16px;
+}
