@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import { Box, Image, Text, Flex } from 'theme-ui'
-import { Plus } from 'react-feather'
+import { Plus, Image as ImageIcon } from 'react-feather'
 
 import Page from '../components/Page'
 
@@ -38,12 +38,19 @@ function Home() {
                             borderRadius: "18px",
                             overflow: "hidden",
                             height: "166px",
-                            marginBottom: "20px"
+                            marginBottom: "20px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
                         }}>
-                            <Image src={deck.image} sx={{
-                                height: "100%",
-                                objectFit: "cover"
-                            }} />
+                            {deck.image ?
+                                <Image src={deck.image} sx={{
+                                    height: "100%",
+                                    objectFit: "cover"
+                                }} />
+                                :
+                                <ImageIcon size={48} />
+                            }
                         </Box>
                         <Text sx={{ fontFamily: "medium" }}>{deck.name}</Text>
                     </Box>
