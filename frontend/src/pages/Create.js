@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useReducer } from 'react'
 
 import { Box, Image, Heading, Input, Flex, Button } from 'theme-ui'
 import { Plus, Image as ImageIcon } from 'react-feather'
@@ -7,8 +7,32 @@ import Page from '../components/Page'
 
 import Field from '../components/wrappers/Field'
 
+const initialState = [{ front: "", back: "" }]
+
+function reducer(state, action) {
+    switch(action.type) {
+        case "add":
+            return state.concat({ front: "", back: "" })
+        case "change":
+            return state.map((card, index) => {
+                if (index === action.index) {
+                    let newCard = {
+                        front: card.front,
+                        back: card.back
+                    }
+                    newCard[action.side] = action.value
+                    return newCard
+                } else {
+                    return card
+                }
+            })
+    }
+}
+
 function Create() {
+    const [name, setName] = useState()
     const [image, setImage] = useState()
+    const [cards, setCards] = useReducer(reducer, initialState)
 
     return (
         <Page title="Create">
@@ -35,7 +59,7 @@ function Create() {
 
                 </Box>
                 <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: "20px" }}>
-                    <Field icon="Tag" placeholder="Name" />
+                    <Field icon="Tag" placeholder="Name" onChange={e => setName(e.target.value)} />
                     <Field icon="Image" placeholder="Thumbnail URL" onChange={e => setImage(e.target.value)} />
                 </Box>
             </Flex>
@@ -48,15 +72,15 @@ function Create() {
                         </tr>
                     </thead>
                     <tbody>
-                        {[{ front: "Front", back: "Back" }, { front: "", back: "" }].map(card =>
-                            <tr>
-                                <td><Input value={card.front} placeholder="Front" variant="plain" sx={{ padding: "4px 6px" }} /></td>
-                                <td><Input value={card.back} placeholder="Back" variant="plain" sx={{ padding: "4px 6px" }} /></td>
+                        {cards.map((card, index) =>
+                            <tr key={index}>
+                                <td><Input value={card.front} placeholder="Front" variant="plain" sx={{ padding: "4px 6px" }} onChange={e => setCards({ type: "change", index, side: "front", value: e.target.value })} /></td>
+                                <td><Input value={card.back} placeholder="Back" variant="plain" sx={{ padding: "4px 6px" }} onChange={e => setCards({ type: "change", index, side: "back", value: e.target.value })} /></td>
                             </tr>
                         )}
                     </tbody>
                 </table>
-                <Button sx={{ borderRadius: "100%", padding: "10px", lineHeight: 0 }}><Plus /></Button>
+                <Button sx={{ borderRadius: "100%", padding: "10px", lineHeight: 0 }} onClick={() => setCards({ type: "add" })}><Plus /></Button>
             </Flex>
         </Page>)
 }
