@@ -4,7 +4,9 @@ const fs = require('fs/promises')
 const passport = require('passport')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const ejs = require('ejs')
 
+const sendMail = require('../helpers/sendMail')
 const isEmail = require('../helpers/isEmail')
 
 const User = require('../models/User')
@@ -42,6 +44,13 @@ router.post('/register', async (req, res, next) => {
         owner: newUser._id,
         ...require('../example-decks/' + deck)
       }).save()
+    })
+
+    const template = await fs.readFile("./email/registration.html", "utf-8")
+    await sendMail({
+      to: newUser.email,
+      subject: 'Cards Account Confirmation',
+      html: ejs.render(template, { domain: process.env.DOMAIN, verification_code: newUser._id })
     })
 
     res.json(newUser)
