@@ -27,7 +27,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), async (req, r
       name: req.body.name,
       image: req.body.image == 'undefined' ? null : req.body.image,
       owner: req.user._id,
-      cards: JSON.parse(req.body.cards).map(card => { if (card.front || card.back) return card })
+      cards: JSON.parse(req.body.cards).filter(card => card.front || card.back)
     }).save()
 
     res.status(200).json({
