@@ -2,12 +2,10 @@ const { Schema, model, Types } = require('mongoose');
 
 const CardSchema = new Schema({    
     front: {
-        type: String,
-        required: true
+        type: String
     },
     back: {
-        type: String,
-        required: true
+        type: String
     }
 });
   
