@@ -1,4 +1,6 @@
 import React, { useState, useReducer } from 'react'
+import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { Box, Image, Heading, Input, Flex, Button } from 'theme-ui'
 import { Plus, Image as ImageIcon } from 'react-feather'
@@ -26,13 +28,46 @@ function reducer(state, action) {
                     return card
                 }
             })
+        default:
+            return state
     }
 }
 
 function Create() {
+    const history = useHistory()
+
     const [name, setName] = useState()
     const [image, setImage] = useState()
     const [cards, setCards] = useReducer(reducer, initialState)
+
+    const [notice, setNotice] = useState({ field: "" })
+
+    const token = useSelector(state => state.user.token)
+
+    const save = async (name, image, cards, token) => {
+        const response = await fetch("/api/deck", {
+            method: 'POST',
+            headers: {
+                Authorization: 'Bearer ' + token,
+            },
+            body: new URLSearchParams({name, image, cards: JSON.stringify(cards)})
+        })
+
+        const data = await response.json()
+
+        if (response.status === 200) {
+            history.push("/")
+        } else {
+            switch (data.message) {
+                case "Empty name":
+                    setNotice({ field: "name" })
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    }
 
     return (
         <Page title="Create">
@@ -59,8 +94,9 @@ function Create() {
 
                 </Box>
                 <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: "20px" }}>
-                    <Field icon="Tag" placeholder="Name" onChange={e => setName(e.target.value)} />
+                    <Field icon="Tag" placeholder="Name" invalid={!name && notice.field === "name"} onChange={e => setName(e.target.value)} />
                     <Field icon="Image" placeholder="Thumbnail URL" onChange={e => setImage(e.target.value)} />
+                    <Button sx={{ width: "100%" , marginTop: "20px" }} onClick={() => save(name, image, cards, token)} >Save</Button>
                 </Box>
             </Flex>
             <Flex sx={{ flexDirection: "column", alignItems: "center", gap: "10px", marginTop: "20px" }}>
