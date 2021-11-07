@@ -9,7 +9,7 @@ router.get('/:id', passport.authenticate('jwt', { session: false }), async (req,
   const deck = await Deck.findById(req.params.id)
 
   if (deck && deck.owner.toString() === req.user._id.toString()) {
-    res.json(deck) 
+    res.json(deck)
   } else {
     res.status(400).json({
       message: "This deck doesn't exist"
