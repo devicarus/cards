@@ -5,7 +5,7 @@ import { Link as ThemedLink } from 'theme-ui'
 
 function Link(props) {
     return (
-        <ThemedLink to={props.to} as={RouterLink} sx={props.sx}>
+        <ThemedLink as={RouterLink} {...props}>
             {props.children}
         </ThemedLink>
     )
