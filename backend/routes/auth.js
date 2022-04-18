@@ -50,7 +50,11 @@ router.post('/register', async (req, res, next) => {
     await sendMail({
       to: newUser.email,
       subject: 'Cards Account Confirmation',
-      html: ejs.render(template, { domain: process.env.DOMAIN, verification_code: newUser._id })
+      html: ejs.render(template, { 
+        domain: process.env.DOMAIN, 
+        contact_email: process.env.CONTACT_EMAIL ? process.env.CONTACT_EMAIL : "contact@"+process.env.DOMAIN,
+        verification_code: newUser._id 
+      })
     })
 
     res.json(newUser)
