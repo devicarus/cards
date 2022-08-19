@@ -21,7 +21,7 @@ function Home() {
                 Authorization: 'Bearer ' + token
             }
         }).then(res => res.json()).then(json => setDecks(json))
-    }, [])
+    }, [token])
 
     return (
         <Page title="Home">

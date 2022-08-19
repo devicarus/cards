@@ -33,7 +33,7 @@ function Playground() {
             .then(json => {
                 setCards(shuffle(json.cards))
             })
-    }, [])
+    }, [id, token])
 
     return (
         <Box
