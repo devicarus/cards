@@ -2,7 +2,7 @@ const express = require('express')
 const fs = require('fs/promises')
 
 const passport = require('passport')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const ejs = require('ejs')
 
