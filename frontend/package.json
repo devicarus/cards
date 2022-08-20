@@ -41,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "http-proxy-middleware": "^1.1.2"
+    "http-proxy-middleware": "^2.0.6"
   }
 }
