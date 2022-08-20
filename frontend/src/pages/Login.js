@@ -138,6 +138,7 @@ function Login() {
                             flexGrow: 1,
                             fontSize: 4,
                             fontWeight: "bold",
+                            textAlign: "center",
                             textDecoration: mode !== "in" ? "none" : "underline",
                             color: mode !== "in" ? "muted" : "text",
                             "&:hover": {
@@ -156,13 +157,14 @@ function Login() {
                             })
                         }}
                     >
-                        <Text sx={{ textAlign: "center" }}>Sign In</Text>
+                        <Text>Sign In</Text>
                     </Link>
                     <Link
                         sx={{
                             flexGrow: 1,
                             fontSize: 4,
                             fontWeight: "bold",
+                            textAlign: "center",
                             textDecoration: mode !== "up" ? "none" : "underline",
                             color: mode !== "up" ? "muted" : "text",
                             "&:hover": {
