@@ -194,7 +194,7 @@ function Login() {
                         register(form)
                     }
                 }}>
-                    <Text mb={3} color={notice.type === "Error" ? "danger" : "primary"} sx={{ fontWeight: "bold", textAlign: "center" }}>{notice.text}</Text>
+                    <Text mb={3} color={notice.type === "Error" ? "danger" : "primary"} sx={{ fontWeight: "bold", textAlign: "center", display: "block" }}>{notice.text}</Text>
 
                     <Field icon="Mail" placeholder="Email" invalid={notice.fields.includes("email")} onChange={e => setForm({ ...form, email: e.target.value })} containerStyle={{ marginBottom: "5px" }} />
                     <Field icon="Lock" placeholder="Password" invalid={notice.fields.includes("password")} onChange={e => setForm({ ...form, password: e.target.value })} type="password" />
