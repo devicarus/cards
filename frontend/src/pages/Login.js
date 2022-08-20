@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { Redirect, useParams, useHistory, useLocation } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 
 import { setToken } from '../store/reducers/user'
 
@@ -13,7 +13,7 @@ function Login() {
     const dispatch = useDispatch()
     const { mode } = useParams()
     const id = new URLSearchParams(useLocation().search).get('verify')
-    const history = useHistory()
+    const navigate = useNavigate()
 
     const [form, setForm] = useState({
         email: "",
@@ -40,6 +40,7 @@ function Login() {
 
         if (response.status === 200) {
             dispatch(setToken(data.token))
+            navigate("/", { replace: true })
         } else {
             switch (data.message) {
                 case "Wrong email or password":
@@ -66,7 +67,7 @@ function Login() {
         const data = await response.json()
 
         if (response.status === 200) {
-            history.push("/signin")
+            navigate("/signin", { replace: true })
             setNotice({ fields: [], text: "Verify your email please", type: "Info" })
         } else {
             switch (data.message) {
@@ -116,10 +117,6 @@ function Login() {
     }
 
     return (<>
-        {useSelector(state => state.user.token) &&
-            <Redirect to='/' />
-        }
-
         <Flex
             sx={{
                 height: "100%",

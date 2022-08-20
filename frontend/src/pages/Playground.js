@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useHistory, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { Box, Button, Progress, Heading } from 'theme-ui'
 import { X } from 'react-feather'
@@ -8,7 +8,7 @@ import { X } from 'react-feather'
 import WordShow from '../components/WordShow'
 
 function Playground() {
-    const history = useHistory()
+    const navigate = useNavigate()
     const token = useSelector(state => state.user.token)
     const { id } = useParams()
 
@@ -52,7 +52,7 @@ function Playground() {
                     top: 20,
                     right: 20
                 }}
-                onClick={() => history.push("/")}
+                onClick={() => navigate("/", { replace: true })}
             >
                 <X size={48} />
             </Button>
