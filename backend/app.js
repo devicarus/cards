@@ -16,11 +16,6 @@ app.use(cookieParser());
 setupPassport(app)
 setupRoutes(app)
 
-mongoose.connect('mongodb://mongo:27017/cards', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-})
-mongoose.set('useCreateIndex', true)
+mongoose.connect('mongodb://mongo:27017/cards')
 
 module.exports = app;
