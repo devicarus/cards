@@ -4,17 +4,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent; /* disables tap highlight on iOS */
 }
-
-html,
-body {
-  height: 100%;
-  position: fixed;
-  overflow: hidden;
-}
-
-body > #root {
-  width: 100vw;
-  height: 100%;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
-}

@@ -26,7 +26,10 @@ function Navbar() {
             sx={{
                 height: "60px",
                 backgroundColor: "primary",
-                boxShadow: "inset 0 0 4px rgb(31, 205, 251), 0 0 2px rgba(0,0,0,0.30)"
+                boxShadow: "inset 0 0 4px rgb(31, 205, 251), 0 0 2px rgba(0,0,0,0.30)",
+                position: "fixed",
+                width: "100%",
+                zIndex: 99
             }}
         >
             <Container sx={{ display: "flex", alignItems: "center" }} px="3" >

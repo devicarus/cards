@@ -42,7 +42,8 @@ function Playground() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexDirection: "column"
+                flexDirection: "column",
+                height: "100vh"
             }}
         >
             <Button

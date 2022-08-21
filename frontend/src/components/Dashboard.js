@@ -9,7 +9,10 @@ function Dashboard() {
 
     return (<>
         <NavBar />
-        <Container>
+        <Container 
+            sx={{ WebkitOverflowScrolling: "touch", height:"100vh", overflow:"auto" }}
+            pt={5}
+        >
             <Heading mt={4} ml={3} mb={2} as="h1">{title}</Heading>
             <Box sx={{
                 boxShadow: "0 0 25px 0 rgba(0,0,0,.04)",

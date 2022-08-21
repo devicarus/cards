@@ -119,7 +119,7 @@ function Login() {
     return (<>
         <Flex
             sx={{
-                height: "100%",
+                height: "100vh",
                 justifyContent: "center",
                 alignItems: "center"
             }}
