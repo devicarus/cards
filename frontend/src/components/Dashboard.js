@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import { Container, Box, Heading } from 'theme-ui'
+import { Container, Box, Heading, useThemeUI } from 'theme-ui'
+import { Helmet } from 'react-helmet'
 
 import NavBar from './NavBar'
 
 function Dashboard() {
     const [title, setTitle] = useState("Page")
+    const { theme } = useThemeUI()
 
     return (<>
+        <Helmet>
+            <meta name="theme-color" content={theme.rawColors.primary} />
+        </Helmet>
         <NavBar />
         <Container 
             sx={{ WebkitOverflowScrolling: "touch", height:"100vh", overflow:"auto" }}

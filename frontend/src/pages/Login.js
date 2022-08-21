@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 import { setToken } from '../store/reducers/user'
 
-import { Flex, Box, Button, Text } from 'theme-ui'
+import { Flex, Box, Button, Text, useThemeUI } from 'theme-ui'
 import Field from '../components/wrappers/Field'
 import Link from '../components/wrappers/Link'
 
@@ -14,6 +15,7 @@ function Login() {
     const { mode } = useParams()
     const id = new URLSearchParams(useLocation().search).get('verify')
     const navigate = useNavigate()
+    const { theme } = useThemeUI()
 
     const [form, setForm] = useState({
         email: "",
@@ -117,6 +119,9 @@ function Login() {
     }
 
     return (<>
+        <Helmet>
+            <meta name="theme-color" content={theme.rawColors.background} />
+        </Helmet>
         <Flex
             sx={{
                 height: "100vh",

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
-import { Box, Button, Progress, Heading } from 'theme-ui'
+import { Box, Button, Progress, Heading, useThemeUI } from 'theme-ui'
 import { X } from 'react-feather'
 
 import WordShow from '../components/WordShow'
@@ -11,6 +12,7 @@ function Playground() {
     const navigate = useNavigate()
     const token = useSelector(state => state.user.token)
     const { id } = useParams()
+    const { theme } = useThemeUI()
 
     const [cards, setCards] = useState([])
     const [cursor, setCursor] = useState(0)
@@ -35,7 +37,10 @@ function Playground() {
             })
     }, [id, token])
 
-    return (
+    return (<>
+        <Helmet>
+            <meta name="theme-color" content={theme.rawColors.background} />
+        </Helmet>
         <Box
             sx={{
                 minHeight: "100%",
@@ -70,7 +75,7 @@ function Playground() {
             }
 
         </Box>
-    )
+    </>)
 }
 
 export default Playground
