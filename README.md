@@ -5,6 +5,10 @@
 
 ### cards
 An open-source clone of Duolingo's Tinycards ⚰️
+
+<br>
+
+![version](https://img.shields.io/github/v/tag/devicarus/cards?color=%233ccfff&label=version&style=for-the-badge)
 <br>
 </div>
 
