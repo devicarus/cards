@@ -30,7 +30,7 @@ git clone https://github.com/devicarus/cards.git && cd cards
 
 #### Create a configuration
 ```bash
-mv frontend/.env.example frontend/.env && vi frontend/.env
+mv backend/.env.example backend/.env && vi backend/.env
 ```
 
 #### Run the containers
